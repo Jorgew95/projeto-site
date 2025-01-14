@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naruto Links</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #252c41;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        header a {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            background-color: #444;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        header a:hover {
+            background-color: #555;
+        }
+        #search-bar {
+            margin: 20px auto;
+            max-width: 600px;
+            display: flex;
+            justify-content: center;
+        }
+        #search-bar input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            outline: none;
+        }
+        #search-bar button {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-left: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        #search-bar button:hover {
+            background-color: #0056b3;
+        }
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        ul.anime-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul.anime-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul.anime-list li a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        ul.anime-list li a:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #252c41;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function searchAnime() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.anime-list li');
+            items.forEach(item => {
+                const title = item.querySelector('span').textContent.toLowerCase();
+                if (title.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html">Home</a>
+        <h1>Anime Search</h1>
+    </header>
+    <main>
+        <ul class="anime-list">
+        
+        <li>
+            <a href="https://drive.google.com/drive/folders/1t-xpcVR1vrKlcvfaDVMN6OO4S1pHQ--p" target="_blank">N1T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1NYrWQz2-kFzsbQPDdXCNM5ScLwxzGdQ2" target="_blank">N2T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1i8a6be3q8Z0d7snIsHL_DJ0O9txcQAtw" target="_blank">N3T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1VS_D1oXQJnspFOgRK7FZfMDpr3iVrmIM" target="_blank">N4T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/12rzzfNIfy_35X3_zYVBe42UJbkLkRzxb" target="_blank">N5T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/12OPGT3aMaBaIzBkhZ1o9PDUqKbknGg5d" target="_blank">N6T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1JJHswN2XMViU8c8to_ZEjVRY3i3xNC3D" target="_blank">N7T</a>
+        </li>
+        <li>
+            <a href="https://drive.google.com/drive/folders/1fU1CK_3FtUBVFGiKfT3NgS5goEPVE9sN" target="_blank">N8T</a>
+        </li>
+        </ul>
+    </main>
+</body>
+</html>
