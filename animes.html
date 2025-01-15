@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista</title>
+    <meta name="description" content="Busque e explore uma lista de animes como Naruto, Frieren, Solo Leveling e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
+    <title>Anime Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -80,6 +81,11 @@
             border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        ul.anime-list li:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.02);
         }
         ul.anime-list li a {
             color: #007bff;
@@ -88,6 +94,12 @@
         }
         ul.anime-list li a:hover {
             text-decoration: underline;
+        }
+        .no-results {
+            text-align: center;
+            color: red;
+            margin-top: 20px;
+            font-weight: bold;
         }
         footer {
             background-color: #252c41;
@@ -101,43 +113,59 @@
         function searchAnime() {
             const query = document.getElementById('search-input').value.toLowerCase();
             const items = document.querySelectorAll('.anime-list li');
+            let found = false;
+
             items.forEach(item => {
                 const title = item.querySelector('span').textContent.toLowerCase();
                 if (title.includes(query)) {
                     item.style.display = 'flex';
+                    found = true;
                 } else {
                     item.style.display = 'none';
                 }
             });
+
+            const noResultsMessage = document.getElementById('no-results');
+            if (found) {
+                noResultsMessage.style.display = 'none';
+            } else {
+                noResultsMessage.style.display = 'block';
+            }
         }
     </script>
 </head>
 <body>
     <header>
-        <a href="index.html">Home</a>
+        <a href="index.html" aria-label="Voltar para a página inicial">Home</a>
         <h1>Anime Search</h1>
     </header>
     <div id="search-bar">
-        <input type="text" id="search-input" placeholder="Pesquise aqui">
-        <button onclick="searchAnime()">Search</button>
+        <label for="search-input" class="visually-hidden">Buscar por anime</label>
+        <input type="text" id="search-input" placeholder="Pesquise aqui" aria-label="Campo de busca de animes">
+        <button onclick="searchAnime()" title="Buscar" aria-label="Buscar animes">Search</button>
     </div>
     <main>
         <h2>Animes</h2>
         <ul class="anime-list">
             <li>
                 <span>Naruto</span>
-                <a href="naruto.html">Clássico</a>
-                <a href="n.html">Shippuden</a>
+                <a href="naruto.html" title="Ver detalhes sobre Naruto Clássico">Clássico</a>
+                <a href="n.html" title="Ver detalhes sobre Naruto Shippuden">Shippuden</a>
             </li>
             <li>
                 <span>Frieren</span>
-                <a href="https://drive.google.com/drive/folders/1IqKgA1uiVDihrq4B6pSMbvf-jV0UR9g-">Frieren</a>
+                <a href="https://drive.google.com/drive/folders/1IqKgA1uiVDihrq4B6pSMbvf-jV0UR9g-" title="Abrir link de Frieren">Frieren</a>
             </li>
             <li>
                 <span>Anime 3</span>
-                <a href="anime3.html">More Details</a>
+                <a href="anime3.html" title="Ver detalhes sobre Anime 3">More Details</a>
+            </li>
+            <li>
+                <span>Solo Leveling</span>
+                <a href="https://drive.google.com/drive/folders/11bY2SwKT0Iknpm699DjXfQB_SAP0_uss" title="Abrir link de Solo Leveling">Solo Leveling</a>
             </li>
         </ul>
+        <p id="no-results" class="no-results" style="display: none;">Nenhum anime encontrado!</p>
     </main>
     <footer>
         <p>&copy; 2025 Anime Search. All rights reserved.</p>
