@@ -149,38 +149,57 @@
             }
         }
 
-        function saveComment() {
-            const commentInput = document.getElementById('comment-input');
-            const commentText = commentInput.value.trim();
+        const animeId = "naruto"; // Identificador do anime atual (substitua pelo correto para cada página)
 
-            if (commentText) {
-                let comments = JSON.parse(localStorage.getItem('comments')) || [];
-                comments.push(commentText);
-                localStorage.setItem('comments', JSON.stringify(comments));
-                commentInput.value = '';
-                displayComments();
-            }
-        }
+// Carregar comentários ao carregar a página
+document.addEventListener("DOMContentLoaded", () => {
+    fetchComments();
+});
 
-        function displayComments() {
-            const commentsContainer = document.getElementById('comments-container');
-            const comments = JSON.parse(localStorage.getItem('comments')) || [];
-            commentsContainer.innerHTML = '';
+// Função para buscar os comentários do servidor
+async function fetchComments() {
+    try {
+        const response = await fetch(`/api/comments?anime_id=${animeId}`);
+        const comments = await response.json();
+        const commentList = document.getElementById("comment-list");
 
-            comments.forEach(comment => {
-                const commentElement = document.createElement('div');
-                commentElement.classList.add('comment');
-                commentElement.textContent = comment;
-                commentsContainer.appendChild(commentElement);
-            });
-        }
+        commentList.innerHTML = comments.map(comment => `
+            <div class="comment">
+                <p><strong>${comment.username}:</strong> ${comment.comment}</p>
+                <small>${new Date(comment.timestamp).toLocaleString()}</small>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error("Erro ao carregar comentários:", error);
+    }
+}
 
-        window.onload = displayComments;
+// Função para enviar um novo comentário
+async function submitComment(event) {
+    event.preventDefault();
+    const username = document.getElementById("username").value;
+    const comment = document.getElementById("comment").value;
+
+    try {
+        await fetch('/api/comments', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ anime_id: animeId, username, comment })
+        });
+        fetchComments(); // Atualizar a lista de comentários
+        document.getElementById("comment-form").reset(); // Limpar o formulário
+    } catch (error) {
+        console.error("Erro ao enviar comentário:", error);
+    }
+}
+
+
+        
     </script>
 </head>
 <body>
     <header>
-        <a href="index.html" aria-label="Voltar para a página inicial">Home</a>
+        <a href="index.html" aria-label="Voltar para a página inicial">Página inicial</a>
         <h1>Anime Search</h1>
     </header>
     <div id="search-bar">
@@ -231,12 +250,22 @@
         </ul>
         <p id="no-results" class="no-results" style="display: none;">Nenhum anime encontrado!</p>
 
-        <div class="comments-section">
-            <h3>Comentários</h3>
-            <textarea id="comment-input" placeholder="Escreva seu comentário aqui..." rows="4" style="width: 100%; padding: 10px;"></textarea>
-            <button onclick="saveComment()" style="margin-top: 10px; padding: 10px; background-color: #007bff; color: white;">Postar Comentário</button>
-            <div id="comments-container" style="margin-top: 20px;"></div>
-        </div>
+        
+            <!-- Seção de comentários -->
+            <div id="comments-section">
+                <h2>Comentários</h2>
+                <div id="comment-list">
+                    <!-- Comentários serão carregados aqui -->
+                </div>
+                <h3>Adicionar Comentário</h3>
+                <form id="comment-form" onsubmit="submitComment(event)">
+                    <input type="text" id="username" placeholder="Seu nome" required>
+                    <textarea id="comment" placeholder="Deixe seu comentário" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        
+    
     </main>
     <footer>
         <p>&copy; 2025 Anime Search. All rights reserved.</p>
