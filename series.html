@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Busque e explore uma lista de animes como Naruto, Frieren, Solo Leveling e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
-    <title>Anime Search</title>
+    <meta name="description" content="Busque e explore uma lista de filmes como Inception, Avatar, Titanic e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
+    <title>Movie Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -72,27 +72,27 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        ul.anime-list {
+        ul.movie-list {
             list-style-type: none;
             padding: 0;
         }
-        ul.anime-list li {
+        ul.movie-list li {
             padding: 10px;
             border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             transition: background-color 0.3s, transform 0.2s;
         }
-        ul.anime-list li:hover {
+        ul.movie-list li:hover {
             background-color: #f0f0f0;
             transform: scale(1.02);
         }
-        ul.anime-list li a {
+        ul.movie-list li a {
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
-        ul.anime-list li a:hover {
+        ul.movie-list li a:hover {
             text-decoration: underline;
         }
         .no-results {
@@ -133,9 +133,9 @@
         }
     </style>
     <script>
-        function searchAnime() {
+        function searchMovie() {
             const query = document.getElementById('search-input').value.toLowerCase();
-            const items = document.querySelectorAll('.anime-list li');
+            const items = document.querySelectorAll('.movie-list li');
             let found = false;
 
             items.forEach(item => {
@@ -156,7 +156,7 @@
             }
         }
 
-        const animeId = "naruto"; // Identificador do anime atual (substitua pelo correto para cada página)
+        const movieId = "inception"; // Identificador do filme atual (substitua pelo correto para cada página)
 
         // Carregar comentários ao carregar a página
         document.addEventListener("DOMContentLoaded", () => {
@@ -166,11 +166,11 @@
         // Função para buscar os comentários do servidor
         async function fetchComments() {
             try {
-                const response = await fetch(`/api/comments?anime_id=${animeId}`);
+                const response = await fetch(`/api/comments?movie_id=${movieId}`);
                 const comments = await response.json();
                 const commentList = document.getElementById("comment-list");
 
-                commentList.innerHTML = comments.map(comment => `
+                commentList.innerHTML = comments.map(comment => ` 
                     <div class="comment">
                         <p><strong>${comment.username}:</strong> ${comment.comment}</p>
                         <small>${new Date(comment.timestamp).toLocaleString()}</small>
@@ -191,7 +191,7 @@
                 await fetch('/api/comments', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ anime_id: animeId, username, comment })
+                    body: JSON.stringify({ movie_id: movieId, username, comment })
                 });
                 fetchComments(); // Atualizar a lista de comentários
                 document.getElementById("comment-form").reset(); // Limpar o formulário
@@ -204,59 +204,25 @@
 <body>
     <header>
         <a href="index.html" aria-label="Voltar para a página inicial">Página inicial</a>
-        <h1>Anime Search</h1>
+        <h1>Movie Search</h1>
     </header>
     <div id="search-bar">
-        <label for="search-input" class="visually-hidden">Buscar por anime</label>
-        <input type="text" id="search-input" placeholder="Pesquise aqui" aria-label="Campo de busca de animes">
-        <button onclick="searchAnime()" title="Buscar" aria-label="Buscar animes">Search</button>
+        <label for="search-input" class="visually-hidden">Buscar por filme</label>
+        <input type="text" id="search-input" placeholder="Pesquise aqui" aria-label="Campo de busca de filmes">
+        <button onclick="searchMovie()" title="Buscar" aria-label="Buscar filmes">Search</button>
     </div>
     <main>
-        <h2>Animes</h2>
-        <ul class="anime-list">
+        <h2>Filmes</h2>
+        <ul class="movie-list">
             <li>
-                <span>Naruto</span>
-                <a href="naruto.html" title="Ver detalhes sobre Naruto Clássico">Clássico</a>
-                <a href="n.html" title="Ver detalhes sobre Naruto Shippuden">Shippuden</a>
-            </li>
-            <li>
-                <span>Frieren</span>
-                <a href="https://drive.google.com/drive/folders/1IqKgA1uiVDihrq4B6pSMbvf-jV0UR9g-" target="_blank" title="Abrir link de Frieren">Frieren</a>
-            </li>
-            <li>
-                <span>Anime 3</span>
-                <a href="anime3.html" title="Ver detalhes sobre Anime 3">More Details</a>
-            </li>
-            <li>
-                <span>Solo Leveling</span>
-                <a href="https://drive.google.com/drive/folders/11bY2SwKT0Iknpm699DjXfQB_SAP0_uss" target="_blank" title="Abrir link de Solo Leveling">Solo Leveling</a>
-            </li>
-            <li>
-                <span>Yu Yu Hakusho</span>
-                <a href="https://drive.google.com/drive/folders/1ZsJBIUoLaM2AV5risDH2fWjrT1AGQMsF?usp=drive_link" target="_blank" title="Abrir link de Yu Yu Hakusho">Yu Yu Hakusho</a>
-            </li>
-            <li>
-                <span>Dan Da Dan</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/132MNXR-JUaJMhOtpKksLS-aDjyM-4oyC" target="_blank" title="Abrir link de Dan Da Dan">Dan Da Dan</a>
-            </li>
-            <li>
-                <span>Dragon Ball Daima</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/10WZlzzdILxImlxLeihkihajXblkYdDL8?usp=sharing" target="_blank" title="Abrir link de Dragon Ball Daima">Dragon Ball Daima</a>
-            </li>
-            <li>
-                <span>Uzumaki</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/1fS2lttzuP2V5Ndr1sQ0hom3TRi3hjb_E?usp=sharing" target="_blank" title="Abrir link de Uzumaki">Uzumaki</a>
-            </li>
-            <li>
-                <span>Rick and Morty: The anime(2024)</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/1MW4w6MksP6aMfHwEMQIwJxz0L2cMKp9A?usp=sharing" target="_blank" title="Abrir link de Rick and Morty: The Anime (2024)">Rick and Morty: The Anime (2024)</a>
-            </li>
-            <li>
-                <span>Os Cavaleiros do Zodíaco</span>
-                <a href="https://drive.google.com/drive/folders/1ysE7kcOpQYC_LKNCR66axZkmLKGQqjkm" target="_blank" title="Abrir link de Rick and Morty: The Anime (2024)">Os Cavaleiros do Zodíaco</a>
+                <span>As ondas</span>
+                <a href="https://drive.google.com/drive/folders/1ZD_afGo7NmLITL6b3GzhzwI-G74Y_JuB?hl=pt-br" target="_blank" title="Ver detalhes sobre As ondas">As ondas</a>
             </li>
         </ul>
-        <p id="no-results" class="no-results" style="display: none;">Nenhum anime encontrado!</p>
+        
+            
+        </ul>
+        <p id="no-results" class="no-results" style="display: none;">Nenhum filme encontrado!</p>
 
         <!-- Seção de comentários -->
         <div id="comments-section">
@@ -271,10 +237,9 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
-    
     </main>
     <footer>
-        <p>&copy; 2025 Anime Search. All rights reserved.</p>
+        <p>&copy; 2025 Movie Search. All rights reserved.</p>
     </footer>
 </body>
 </html>
