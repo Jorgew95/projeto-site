@@ -199,6 +199,19 @@
                 console.error("Erro ao enviar comentário:", error);
             }
         }
+
+document.addEventListener("DOMContentLoaded", () => {
+const listItems = Array.from(document.querySelectorAll("li"));
+const sortedItems = listItems.sort((a, b) => {
+    const textA = a.querySelector("span").textContent.trim().toUpperCase();
+    const textB = b.querySelector("span").textContent.trim().toUpperCase();
+    return textA.localeCompare(textB);
+});
+
+const parent = listItems[0].parentNode;
+parent.innerHTML = ""; // Limpa a lista atual
+sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
+});
     </script>
 </head>
 <body>
@@ -218,6 +231,10 @@
                 <span>Naruto</span>
                 <a href="naruto.html" title="Ver detalhes sobre Naruto Clássico">Clássico</a>
                 <a href="n.html" title="Ver detalhes sobre Naruto Shippuden">Shippuden</a>
+            </li>
+            <li>
+                <span>Haikyuu!! A Batalha do Lixão</span>
+                <a href="https://drive.google.com/drive/folders/1zdQAOMJkeTUIskY60Pyy2UMDgLohHOYm" title="Ver detalhes sobre Haikyuu!! A Batalha do Lixão">Haikyuu!! A Batalha do Lixão</a>
             </li>
             <li>
                 <span>Frieren</span>
