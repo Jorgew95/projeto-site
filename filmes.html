@@ -199,6 +199,19 @@
                 console.error("Erro ao enviar comentário:", error);
             }
         }
+
+document.addEventListener("DOMContentLoaded", () => {
+const listItems = Array.from(document.querySelectorAll("li"));
+const sortedItems = listItems.sort((a, b) => {
+    const textA = a.querySelector("span").textContent.trim().toUpperCase();
+    const textB = b.querySelector("span").textContent.trim().toUpperCase();
+    return textA.localeCompare(textB);
+});
+
+const parent = listItems[0].parentNode;
+parent.innerHTML = ""; // Limpa a lista atual
+sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
+});
     </script>
 </head>
 <body>
@@ -214,7 +227,6 @@
     <main>
         <h2>Filmes</h2>
         <ul class="movie-list">
-            <ul class="movie-list">
                 <li>
                     <span>007 Atuais</span>
                     <a href="https://drive.google.com/drive/u/0/mobile/folders/1ATmaF_AYSN6-_8_BDHndWC438s1d90zo" target="_blank" title="Ver detalhes sobre 007 Atuais">007 Atuais</a>
@@ -335,8 +347,98 @@
                     <span>Tempo</span>
                     <a href="https://drive.google.com/drive/folders/1zFXmSyeMkhpo8u5RzzdFbbqCjxSyE7N1?hl=pt-br" target="_blank" title="Ver detalhes sobre Tempo">Tempo</a>
                 </li>
-            </ul>
-            
+                <li>
+                    <span>Nosferatu(2024)</span>
+                    <a href="https://drive.google.com/drive/u/0/mobile/folders/1Ryq8qozphfLV7gcC-Ne4LpdXycsUYKLR?usp=sharing" target="_blank" title="Ver detalhes sobre Nosferatu(2024)">Nosferatu(2024)</a>
+                </li>
+                <li>
+                    <span>Star Wars: Ameaça Fantasma</span>
+                    <a href="https://drive.google.com/file/d/1loRP8o2o3rPMPQ8Iii-ICyIaHhsgIrld/view?usp=drivesdk" target="_blank" title="Ver detalhes sobre Star Wars: Ameaça Fantasma">Star Wars: Ameaça Fantasma</a>
+                </li>
+                <li>
+                    <span>Os Oito Odiados</span>
+                    <a href="https://drive.google.com/file/d/12Hezdl4YOnRqhzlmaL3HI6JDTlEP84fK/view" target="_blank" title="Ver detalhes sobre Os Oito Odiados">Os Oito Odiados</a>
+                </li>
+                <li>
+                    <span>Kill Bill Volume 1</span>
+                    <a href="https://drive.google.com/file/d/11ZwamcP3TxWCYR1xi4zpzZFb-9FnyhWJ/view" target="_blank" title="Ver detalhes sobre Kill Bill Volume 1">Kill Bill Volume 1</a>
+                </li>
+                <li>
+                    <span>Kill Bill Volume 2</span>
+                    <a href="https://drive.google.com/file/d/1DNv4WtlPqMSaLjgiej5IeaADwjRzGP-7/view" target="_blank" title="Ver detalhes sobre Kill Bill Volume 2">Kill Bill Volume 2</a>
+                </li>
+                <li>
+                    <span>Cães de Aluguel</span>
+                    <a href="https://drive.google.com/file/d/1mjOxuOHRFxdNKkLxX-rQlwl2VJd4E6xR/view?usp=drive_open" target="_blank" title="Ver detalhes sobre Cães de Aluguel">Cães de Aluguel</a>
+                </li>
+                <li>
+                    <span>Era uma Vez em Hollywood</span>
+                    <a href="https://drive.google.com/file/d/14wsvj4uGEmiPaOgCdn93PqnAjDOd9hCs/view" target="_blank" title="Ver detalhes sobre Era uma Vez em Hollywood">Era uma Vez em Hollywood</a>
+                </li>
+                <li>
+                    <span>Pulp Fiction</span>
+                    <a href="https://drive.google.com/file/d/1pLCjn7jvdqEnuq-IiLAR8Y7skEI_BEi_/view?usp=drive_open" target="_blank" title="Ver detalhes sobre Pulp Fiction">Pulp Fiction</a>
+                </li>
+                <li>
+                    <span>Django</span>
+                    <a href="https://drive.google.com/file/d/1UI67qgfkii2KJH4QpvA-tqaJBkqxdR-o/view" target="_blank" title="Ver detalhes sobre Django">Django</a>
+                </li>
+                <li>
+                    <span>Bastardos Inglórios</span>
+                    <a href="https://drive.google.com/file/d/1_M4QQgztTYD5g-GtRJRNtllYCEiORpkX/view" target="_blank" title="Ver detalhes sobre Bastardos Inglórios">Bastardos Inglórios</a>
+                </li>
+                <li>
+                    <span>2001: Uma Odisseia no Espaço</span>
+                    <a href="https://drive.google.com/file/d/1VEzDGRx-XAoHpt9VZZEE5QrXStqYI9tS/view" target="_blank" title="Ver detalhes sobre 2001: Uma Odisseia no Espaço">2001: Uma Odisseia no Espaço</a>
+                </li>
+                <li>
+                    <span>Laranja Mecânica</span>
+                    <a href="https://drive.google.com/drive/u/0/mobile/folders/1yvRb3c8Sf7v2VUu-slbKyJisVIzgtJjX" target="_blank" title="Ver detalhes sobre Laranja Mecânica">Laranja Mecânica</a>
+                </li>
+                <li>
+                    <span>O Iluminado</span>
+                    <a href="https://drive.google.com/drive/u/0/mobile/folders/1Nj7zfFqJDMUkM1faWBk6dCsSr77LAiyw" target="_blank" title="Ver detalhes sobre O Iluminado">O Iluminado</a>
+                </li>
+                <li>
+                    <span>Variados +5000</span>
+                    <a href="https://drive.google.com/drive/folders/1-4xKzyctueeKVqJ1jPAPIRoK3cw8R4jA" target="_blank" title="Ver detalhes sobre Variados +5000">Variados +5000</a>
+                </li>
+                <li>
+                    <span>Variados</span>
+                    <a href="https://photos.google.com/share/AF1QipMa_hYmjIi7Wy1ol7jpna7t3KakhMGSyIA51Y2xj4wQm2nzWIUEltAr7ldkQRuclQ?key=aW1ha1o0UXAwSzh4SXh6NnNzMl82c1A3NnZJUFZB" target="_blank" title="Ver detalhes sobre Variados">Variados</a>
+                </li>
+                <li>
+                    <span>Ad Astra</span>
+                    <a href="https://drive.google.com/file/d/1eDoc5w9K-zyZCBk7TnrnnjnrjOmiR6mc/view?usp=drivesdk" target="_blank" title="Ver detalhes sobre Ad Astra">Ad Astra</a>
+                </li>
+                <li>
+                    <span>Trem Bala</span>
+                    <a href="https://drive.google.com/file/d/1DU5PeeLVYtvm56IToYsCt_fqoZt26NCr/view?usp=drivesdk" target="_blank" title="Ver detalhes sobre Trem Bala">Trem Bala</a>
+                </li>
+                <li>
+                    <span>Parasita</span>
+                    <a href="https://drive.google.com/file/d/12rQFTeHWtE6w3mI5tO65_4iTQl9Twx01/view?usp=drivesdk" target="_blank" title="Ver detalhes sobre Parasita">Parasita</a>
+                </li>
+                <li>
+                    <span>O Exorcismo de Emily Rose</span>
+                    <a href="https://drive.google.com/file/d/1T9Ytm8jKxboeQRafc0Lnj5DpII4o0b6U/view" target="_blank" title="Ver detalhes sobre O Exorcismo de Emily Rose">O Exorcismo de Emily Rose</a>
+                </li>
+                <li>
+                    <span>Rio</span>
+                    <a href="https://drive.google.com/file/d/0B9konOTuvSYRNnIwQ1B1aFdGaEE/view?resourcekey=0-47FdR0Rsk-sm55OmGNPYYg" target="_blank" title="Ver detalhes sobre Rio">Rio</a>
+                </li>
+                <li>
+                    <span>Rio 2</span>
+                    <a href="https://drive.google.com/file/d/1zHLEUHkZ4q3Dm8-FundyIuIaYJZtBQ5z/view" target="_blank" title="Ver detalhes sobre Rio 2">Rio 2</a>
+                </li>
+                <li>
+                    <span>Procurando Nemo</span>
+                    <a href="https://drive.google.com/file/d/12aa-ltgysRQBhuHD-PLLCvp4crPCsBqQ/view" target="_blank" title="Ver detalhes sobre Procurando Nemo">Procurando Nemo</a>
+                </li>
+                <li>
+                    <span>Procurando Dory</span>
+                    <a href="https://drive.google.com/file/d/1P1OgvS5XlBDWNfOBwv-Mu1Cqy6agRUIX/view" target="_blank" title="Ver detalhes sobre Procurando Dory">Procurando Dory</a>
+                </li>      
         </ul>
         <p id="no-results" class="no-results" style="display: none;">Nenhum filme encontrado!</p>
 
@@ -353,6 +455,7 @@
                 <button type="submit">Enviar</button>
             </form>
         </div>
+   
     </main>
     <footer>
         <p>&copy; 2025 Movie Search. All rights reserved.</p>
