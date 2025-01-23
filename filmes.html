@@ -7,85 +7,19 @@
     <title>Movie Search</title>
     <link rel="stylesheet" href="style.css">
     <script>
-        function searchMovie() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const items = document.querySelectorAll('.movie-list li');
-            let found = false;
+    //funçao para organizar lista em ordem alfabética
+    document.addEventListener("DOMContentLoaded", () => {
+    const listItems = Array.from(document.querySelectorAll("li"));
+    const sortedItems = listItems.sort((a, b) => {
+        const textA = a.querySelector("span").textContent.trim().toUpperCase();
+        const textB = b.querySelector("span").textContent.trim().toUpperCase();
+        return textA.localeCompare(textB);
+    });
 
-            items.forEach(item => {
-                const title = item.querySelector('span').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    item.style.display = 'flex';
-                    found = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            const noResultsMessage = document.getElementById('no-results');
-            if (found) {
-                noResultsMessage.style.display = 'none';
-            } else {
-                noResultsMessage.style.display = 'block';
-            }
-        }
-
-        const movieId = "inception"; // Identificador do filme atual (substitua pelo correto para cada página)
-
-        // Carregar comentários ao carregar a página
-        document.addEventListener("DOMContentLoaded", () => {
-            fetchComments();
-        });
-
-        // Função para buscar os comentários do servidor
-        async function fetchComments() {
-            try {
-                const response = await fetch(`/api/comments?movie_id=${movieId}`);
-                const comments = await response.json();
-                const commentList = document.getElementById("comment-list");
-
-                commentList.innerHTML = comments.map(comment => ` 
-                    <div class="comment">
-                        <p><strong>${comment.username}:</strong> ${comment.comment}</p>
-                        <small>${new Date(comment.timestamp).toLocaleString()}</small>
-                    </div>
-                `).join('');
-            } catch (error) {
-                console.error("Erro ao carregar comentários:", error);
-            }
-        }
-
-        // Função para enviar um novo comentário
-        async function submitComment(event) {
-            event.preventDefault();
-            const username = document.getElementById("username").value;
-            const comment = document.getElementById("comment").value;
-
-            try {
-                await fetch('/api/comments', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ movie_id: movieId, username, comment })
-                });
-                fetchComments(); // Atualizar a lista de comentários
-                document.getElementById("comment-form").reset(); // Limpar o formulário
-            } catch (error) {
-                console.error("Erro ao enviar comentário:", error);
-            }
-        }
-
-document.addEventListener("DOMContentLoaded", () => {
-const listItems = Array.from(document.querySelectorAll("li"));
-const sortedItems = listItems.sort((a, b) => {
-    const textA = a.querySelector("span").textContent.trim().toUpperCase();
-    const textB = b.querySelector("span").textContent.trim().toUpperCase();
-    return textA.localeCompare(textB);
-});
-
-const parent = listItems[0].parentNode;
-parent.innerHTML = ""; // Limpa a lista atual
-sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
-});
+    const parent = listItems[0].parentNode;
+    parent.innerHTML = ""; // Limpa a lista atual
+    sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
+    });
     </script>
 </head>
 <body>
@@ -93,11 +27,6 @@ sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em or
         <a href="index.html" aria-label="Voltar para a página inicial">Página inicial</a>
         <h1>Movie Search</h1>
     </header>
-    <div id="search-bar">
-        <label for="search-input" class="visually-hidden">Buscar por filme</label>
-        <input type="text" id="search-input" placeholder="Pesquise aqui" aria-label="Campo de busca de filmes">
-        <button onclick="searchMovie()" title="Buscar" aria-label="Buscar filmes">Search</button>
-    </div>
     <main>
         <h2>Filmes</h2>
         <ul class="site-list">
@@ -457,23 +386,7 @@ sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em or
                     <a href="https://drive.google.com/drive/folders/1-ZD-BNGzNpmoW3SbxzJI_1JrIfYLsa7s" target="_blank" title="Ver detalhes sobre Megalópolis">Megalópolis</a>
                 </li>
         </ul>
-        <p id="no-results" class="no-results" style="display: none;">Nenhum filme encontrado!</p>
-
-        <!-- Seção de comentários -->
-        <div id="comments-section">
-            <h2>Comentários</h2>
-            <div id="comment-list">
-                <!-- Comentários serão carregados aqui -->
-            </div>
-            <h3>Adicionar Comentário</h3>
-            <form id="comment-form" onsubmit="submitComment(event)">
-                <input type="text" id="username" placeholder="Seu nome" required>
-                <textarea id="comment" placeholder="Deixe seu comentário" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </div>
-   
-    </main>
+     </main>
     <footer>
         <p>&copy; 2025 Movie Search. All rights reserved.</p>
     </footer>
