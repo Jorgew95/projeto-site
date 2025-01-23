@@ -4,120 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projetos</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #252c41;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        header a {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #444;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        header a:hover {
-            background-color: #555;
-        }
-        #search-bar {
-            margin: 20px auto;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #search-bar input {
-            flex: 1;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        #search-bar button {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-left: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #search-bar button:hover {
-            background-color: #0056b3;
-        }
-        main {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        ul.anime-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul.anime-list li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        ul.anime-list li a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
-        ul.anime-list li a:hover {
-            color: #0056b3;
-        }
-        footer {
-            background-color: #252c41;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 20px;
-        }
-        @media (max-width: 768px) {
-            #search-bar {
-                flex-direction: column;
-            }
-            #search-bar input, #search-bar button {
-                width: 100%;
-                margin: 5px 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script>
         function searchAnime() {
             const query = document.getElementById('search-input').value.toLowerCase().trim();
@@ -138,7 +25,7 @@
         <button onclick="searchAnime()">Pesquisar</button>
     </div>
     <main>
-        <ul class="anime-list">
+        <ul class="site-list">
             <li><a href="animes.html">Animes</a></li>
             <li><a href="filmes.html">Filmes</a></li>
             <li><a href="series.html">Séries</a></li>

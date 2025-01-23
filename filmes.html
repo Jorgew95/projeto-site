@@ -5,133 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Busque e explore uma lista de filmes como Inception, Avatar, Titanic e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
     <title>Movie Search</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-        }
-        header {
-            background-color: #252c41;
-            color: white;
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
-        header a {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            background-color: #444;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-        header a:hover {
-            background-color: #555;
-        }
-        #search-bar {
-            margin: 20px auto;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-        }
-        #search-bar input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-        #search-bar button {
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-left: none;
-            background-color: #007bff;
-            color: white;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-        }
-        #search-bar button:hover {
-            background-color: #0056b3;
-        }
-        main {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        ul.movie-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul.movie-list li {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-            display: flex;
-            justify-content: space-between;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        ul.movie-list li:hover {
-            background-color: #f0f0f0;
-            transform: scale(1.02);
-        }
-        ul.movie-list li a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        ul.movie-list li a:hover {
-            text-decoration: underline;
-        }
-        .no-results {
-            text-align: center;
-            color: red;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        .comments-section {
-            margin-top: 30px;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .comments-section h3 {
-            margin-top: 0;
-        }
-        .comment {
-            margin-bottom: 10px;
-            padding: 10px;
-            background-color: #e9ecef;
-            border-radius: 5px;
-        }
-        footer {
-            background-color: #252c41;
-            color: white;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 20px;
-        }
-        textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            resize: vertical;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
     <script>
         function searchMovie() {
             const query = document.getElementById('search-input').value.toLowerCase();
@@ -226,7 +100,7 @@ sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em or
     </div>
     <main>
         <h2>Filmes</h2>
-        <ul class="movie-list">
+        <ul class="site-list">
                 <li>
                     <span>007 Atuais</span>
                     <a href="https://drive.google.com/drive/u/0/mobile/folders/1ATmaF_AYSN6-_8_BDHndWC438s1d90zo" target="_blank" title="Ver detalhes sobre 007 Atuais">007 Atuais</a>
