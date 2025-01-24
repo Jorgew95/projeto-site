@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: hsl(0, 0%, 0%);
+    background-color: hsl(0, 0%, 13%);
     color: #e0dede;
 }
 header {
@@ -64,7 +64,7 @@ main {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
-    background: #0a0a0a;
+    background: hsl(0, 0%, 13%);
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
