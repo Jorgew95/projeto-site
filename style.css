@@ -15,23 +15,15 @@ header{
     width:100%;
     background:#0C0E12;
     text-align:center;
-    padding: 20px 0;
+    padding: -20% 0;
     color: #1746c7;
   }
-  
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    position: fixed;
-    left: 50%;
-    transform: translateY(-50%);    
-}
 
 header a {
     position: fixed;
-    top: 30;
+    top: 0;
     left: 0;
-    transform: translateY(-50%);
+    transform: translateY(80%);
     color: white;
     text-decoration: none;
     font-weight: bold;
