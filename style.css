@@ -64,6 +64,7 @@ ul.site-list li {
     display: flex;
     justify-content: space-between;
     transition: background-color 0.3s, transform 0.2s;
+    font-size: 20px;
 }
 
 ul.site-list li:hover {
@@ -77,6 +78,7 @@ ul.site-list li a {
     font-weight: normal;  
     justify-content: space-between;
     text-align: end;
+    font-size: 20px;
 }
 
 ul.site-list li a:hover {
