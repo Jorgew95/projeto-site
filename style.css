@@ -24,11 +24,9 @@ header h1 {
     font-size: 24px;
     position: fixed;
     left: 50%;
-    transform: translateY(-50%);
-       
-
-    
+    transform: translateY(-50%);    
 }
+
 header a {
     position: fixed;
     top: 30;
@@ -42,15 +40,18 @@ header a {
     padding: 5px 10px;
     border-radius: 40px;
 }
+
 header a:hover {
     background-color: #747171;
 }
+
 #search-bar {
     margin: 20px auto;
     max-width: 600px;
     display: flex;
     justify-content: center;
 }
+
 #search-bar input {
     width: 100%;
     padding: 10px;
@@ -58,6 +59,7 @@ header a:hover {
     border-radius: 5px 0 0 5px;
     outline: none;
 }
+
 #search-bar button {
     padding: 10px;
     border: 1px solid #ddd;
@@ -70,6 +72,7 @@ header a:hover {
 #search-bar button:hover {
     background-color: #0056b3;
 }
+
 main {
     max-width: 1200px;
     margin: 20px auto;
@@ -78,10 +81,12 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 ul.site-list {
     list-style-type: none;
     padding: 0;
 }
+
 ul.site-list li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -89,10 +94,12 @@ ul.site-list li {
     justify-content: space-between;
     transition: background-color 0.3s, transform 0.2s;
 }
+
 ul.site-list li:hover {
     background-color: #7a7979;
     transform: scale(1.02);
 }
+
 ul.site-list li a {
     color: #1746c7;
     text-decoration: none;
@@ -100,15 +107,18 @@ ul.site-list li a {
     justify-content: space-between;
     text-align: end;
 }
+
 ul.site-list li a:hover {
     text-decoration: underline;
 }
+
 .no-results {
     text-align: center;
     color: red;
     margin-top: 20px;
     font-weight: bold;
 }
+
 .comments-section {
     margin-top: 30px;
     background-color: #f9f9f9;
@@ -116,15 +126,18 @@ ul.site-list li a:hover {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .comments-section h3 {
     margin-top: 0;
 }
+
 .comment {
     margin-bottom: 10px;
     padding: 10px;
     background-color: #e9ecef;
     border-radius: 5px;
 }
+
 footer {
     background-color: #0C0E12;
     color: white;
@@ -132,6 +145,7 @@ footer {
     padding: 1rem;
     margin-top: 20px;
 }
+
 textarea {
     width: 100%;
     padding: 10px;
@@ -154,6 +168,7 @@ ul.principal-list {
     list-style-type: none;
     padding: 0;
 }
+
 ul.principal-list li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
@@ -161,15 +176,18 @@ ul.principal-list li {
     justify-content: space-between;
     transition: background-color 0.3s, transform 0.2s;
 }
+
 ul.principal-list li:hover {
     background-color: #7a7979;
     transform: scale(1.02);
 }
+
 ul.principal-list li a {
     color: #f5f5f7;
     text-decoration: none;
     font-weight: bold;
 }
+
 ul.principal-list li a:hover {
     text-decoration: underline;
 }
