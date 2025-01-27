@@ -76,7 +76,6 @@ ul.site-list li:hover {
 
 ul.site-list li a {
     color: #1746c7;
-    text-decoration: none;
     font-weight: normal;  
     justify-content: space-between;
     text-align: end;
