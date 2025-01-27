@@ -95,24 +95,6 @@ footer {
     margin-top: 20px;
 }
 
-textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    resize: vertical;
-}
-
-@media (max-width: 768px) {
-    #search-bar {
-        flex-direction: column;
-    }
-    #search-bar input, #search-bar button {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
-
 ul.principal-list {
     list-style-type: none;
     padding: 0;
