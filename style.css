@@ -22,14 +22,14 @@ header{
     text-align:center;
     padding: -20% 0;
     color: #da0d1e;
-    font-size: x-small;
+    font-size: 13px;
   }
 
   header a {
     position: fixed;
     top: 0;
     left: 1%;
-    transform: translateY(50%);
+    transform: translateY(78%);
     color: white;
     text-decoration: none;
     font-weight: bold;
