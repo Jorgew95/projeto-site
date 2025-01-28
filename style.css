@@ -1,7 +1,9 @@
 @charset "UTF-8";
 @font-face {
     font-family: 'n';
-    src: url(fontes/BebasNeue.otf);
+    src: url(fontes/BebasNeue.woff2) format('woff2'),
+         url(fontes/BebasNeue.woff) format('woff'),
+         url(fontes/BebasNeue.otf) format('opentype');
 }
 
 body {
@@ -12,33 +14,33 @@ body {
     background-color: hsl(0, 0%, 13%);
     color: white;
 }
-header{
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#0C0E12;
-    text-align:center;
-    padding: -20% 0;
-    color: #da0d1e;
-    font-size: 13px;
-  }
 
-  header a {
+header {
+    display: block;
     position: fixed;
     top: 0;
+    left: 0;
+    width: 100%;
+    background: #0C0E12;
+    text-align: center;
+    padding: 2px 0; /* Ajustado para espaçamento correto */
+    color: #da0d1e;
+    font-size: 12px;
+}
+
+header a {
+    position: fixed;
+    top: 3.3%;
     left: 1%;
-    transform: translateY(78%);
+    transform: translateY(-50%); /* Centraliza verticalmente */
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 19px;
     background-color: #444;
-    padding: 0px 15px;
+    padding: 5px 15px; /* Ajustado para mais conforto visual */
     border-radius: 50px;
     font-weight: 200;
-
 }
 
 header a:hover {
@@ -46,9 +48,8 @@ header a:hover {
 }
 
 main {
-    
     max-width: 1800px;
-    margin: 90px auto;
+    margin: 100px auto; /* Ajustado para mais espaço do cabeçalho */
     padding: 10px;
     background: hsl(0, 0%, 13%);
     border-radius: 8px;
@@ -65,13 +66,14 @@ ul.site-list li {
     border-bottom: 1px solid #ddd;
     display: flex;
     justify-content: space-between;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
     font-size: 20px;
 }
 
 ul.site-list li:hover {
     background-color: #7a7979;
     transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 ul.site-list li a {
@@ -100,17 +102,17 @@ ul.principal-list {
 }
 
 ul.principal-list li {
-
     padding: 5px 10px;
     border-bottom: 1px solid white;
     display: flex;
     justify-content: space-between;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 ul.principal-list li:hover {
     background-color: #7a7979;
     transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 ul.principal-list li a {
@@ -122,4 +124,15 @@ ul.principal-list li a {
 
 ul.principal-list li a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    header a {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+    ul.site-list li, ul.principal-list li {
+        font-size: 16px;
+        padding: 8px;
+    }
 }
