@@ -68,20 +68,6 @@ header {
     font-size: 13px;
 }
 
-.ajuste {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0C0E12;
-    align-items: center; /* Alinha os itens verticalmente no centro */
-    justify-content: space-between; /* Espaça os itens de maneira uniforme */
-    padding: 10px 20px;
-    color: #da0d1e;
-    font-size: 13px;
-}
-
 .ajuste a {
     color: white;
     text-decoration: none;
@@ -101,8 +87,8 @@ header {
     margin: 0;
     font-size: 25px;
     color: rgb(211, 24, 24);
-    text-align:  center; /* Centraliza o texto do título */
-    flex-grow:1 /* Permite que o título ocupe o máximo de espaço disponível */
+    text-align: center; /* Centraliza o texto do título */
+    flex-grow: 1; /* Permite que o título ocupe o máximo de espaço disponível */
     flex-shrink: 0; /* Evita que o título encolha */
 }
 
@@ -110,7 +96,7 @@ header {
     display: flex;
     align-items: center;
     gap: 5px;
-    margin-right: 2%; /* Aumenta o espaço à direita da barra de pesquisa */
+    margin-right: 10%; /* Aumenta o espaço à direita da barra de pesquisa */
     margin-left: 20px; /* Adiciona um pequeno espaço à esquerda da barra de pesquisa */
 }
 
@@ -137,7 +123,6 @@ header {
 .ajuste .search-bar button:hover {
     background-color: #e90a0a;
 }
-
 main {
     max-width: 1800px;
     margin: 100px auto;
@@ -218,30 +203,44 @@ ul.principal-list li a:hover {
 }
 
 @media (max-width: 768px) {
-    .juste {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .ajuste a {
-        font-size: 16px;
-        padding: 5px 10px;
+    .ajuste {
+        flex-direction: column; /* Empilha os elementos na coluna */
+        align-items: flex-start; /* Alinha os itens à esquerda */
+        padding: 10px; /* Ajusta o padding */
     }
 
     .ajuste h1 {
-        margin-bottom: 10px;
+        font-size: 20px; /* Reduz o tamanho do título */
+        text-align: center; /* Centraliza o título na tela */
+        margin: 10px 0; /* Ajusta a margem ao redor do título */
     }
 
     .ajuste .search-bar {
-        justify-content: center;
+        width: 100%; /* A barra de pesquisa ocupa toda a largura */
+        margin-right: 0; /* Remove o espaçamento à direita */
+        margin-left: 0; /* Remove o espaçamento à esquerda */
+        margin-top: 10px; /* Dá um pequeno espaçamento acima da barra de pesquisa */
     }
 
+    .ajuste .search-bar input {
+        width: 100%; /* Faz a input ocupar toda a largura disponível */
+        padding: 10px; /* Aumenta o padding para maior conforto no toque */
+    }
+
+    .ajuste .search-bar button {
+        width: 100%; /* Faz o botão ocupar toda a largura disponível */
+        padding: 10px; /* Aumenta o padding */
+        font-size: 18px; /* Ajusta o tamanho da fonte do botão */
+    }
+
+    .ajuste a {
+        font-size: 16px; /* Ajusta o tamanho do link */
+        margin-bottom: 10px; /* Dá um pequeno espaçamento abaixo do link */
+    }
+}
     ul.site-list li, ul.principal-list li {
         font-size: 16px;
         padding: 8px;
     }
 
-    .ajuste .search-bar input {
-        width: 200px;
-    }
-}
+
