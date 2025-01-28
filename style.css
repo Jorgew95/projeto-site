@@ -124,17 +124,18 @@ header {
     background-color: #e90a0a;
 }
 main {
-    max-width: 1800px;
+    max-width: 1700px;
     margin: 100px auto;
-    padding: 10px;
+    padding: 30px;
     background: hsl(0, 0%, 13%);
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 ul.site-list {
     list-style-type: none;
     padding: 0;
+
 }
 
 ul.site-list li {
@@ -143,7 +144,7 @@ ul.site-list li {
     display: flex;
     justify-content: space-between;
     transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 ul.site-list li:hover {
@@ -157,7 +158,11 @@ ul.site-list li a {
     font-weight: normal;  
     justify-content: space-between;
     text-align: end;
-    font-size: 20px;
+    font-size: 25px;
+}
+ul.site-list span{
+
+    font-size: 25px;
 }
 
 ul.site-list li a:hover {
@@ -176,7 +181,6 @@ ul.principal-list {
     list-style-type: none;
     padding: 0;
 }
-
 ul.principal-list li {
     padding: 5px 10px;
     border-bottom: 1px solid white;
