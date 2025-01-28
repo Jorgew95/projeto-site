@@ -7,11 +7,17 @@
     <title>Séries Search</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
+    <script src="scripts.js"></script>
 </head>
+
 <body>
-    <header>
+    <header class="ajuste">
         <a href="index.html" aria-label="Voltar para a página inicial">Links</a>
         <h1>Séries</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="searchInput">
+            <button type="button" onclick="searchFunction()">🔍</button>
+          </div>  
     </header>
     <main>
         <h2>Séries</h2>

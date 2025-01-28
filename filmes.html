@@ -7,26 +7,16 @@
     <title>Filmes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
-    <script>
-    //funçao para organizar lista em ordem alfabética
-    document.addEventListener("DOMContentLoaded", () => {
-    const listItems = Array.from(document.querySelectorAll("li"));
-    const sortedItems = listItems.sort((a, b) => {
-        const textA = a.querySelector("span").textContent.trim().toUpperCase();
-        const textB = b.querySelector("span").textContent.trim().toUpperCase();
-        return textA.localeCompare(textB);
-    });
-
-    const parent = listItems[0].parentNode;
-    parent.innerHTML = ""; // Limpa a lista atual
-    sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
-    });
-    </script>
+    <script src="scripts.js"></script>
 </head>
 <body>
-    <header>
+    <header class="ajuste">
         <a href="index.html" aria-label="Voltar para a página inicial">Links</a>
         <h1>Filmes</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="searchInput">
+            <button type="button" onclick="searchFunction()">🔍</button>
+          </div>        
     </header>
     <main>
         <h2>Filmes</h2>

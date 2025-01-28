@@ -7,92 +7,16 @@
     <title>Animes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
-    <script>
-        function searchAnime() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            const items = document.querySelectorAll('.anime-list li');
-            let found = false;
-
-            items.forEach(item => {
-                const title = item.querySelector('span').textContent.toLowerCase();
-                if (title.includes(query)) {
-                    item.style.display = 'flex';
-                    found = true;
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-
-            const noResultsMessage = document.getElementById('no-results');
-            if (found) {
-                noResultsMessage.style.display = 'none';
-            } else {
-                noResultsMessage.style.display = 'block';
-            }
-        }
-
-        const animeId = "naruto"; // Identificador do anime atual (substitua pelo correto para cada página)
-
-        // Carregar comentários ao carregar a página
-        document.addEventListener("DOMContentLoaded", () => {
-            fetchComments();
-        });
-
-        // Função para buscar os comentários do servidor
-        async function fetchComments() {
-            try {
-                const response = await fetch(`/api/comments?anime_id=${animeId}`);
-                const comments = await response.json();
-                const commentList = document.getElementById("comment-list");
-
-                commentList.innerHTML = comments.map(comment => `
-                    <div class="comment">
-                        <p><strong>${comment.username}:</strong> ${comment.comment}</p>
-                        <small>${new Date(comment.timestamp).toLocaleString()}</small>
-                    </div>
-                `).join('');
-            } catch (error) {
-                console.error("Erro ao carregar comentários:", error);
-            }
-        }
-
-        // Função para enviar um novo comentário
-        async function submitComment(event) {
-            event.preventDefault();
-            const username = document.getElementById("username").value;
-            const comment = document.getElementById("comment").value;
-
-            try {
-                await fetch('/api/comments', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ anime_id: animeId, username, comment })
-                });
-                fetchComments(); // Atualizar a lista de comentários
-                document.getElementById("comment-form").reset(); // Limpar o formulário
-            } catch (error) {
-                console.error("Erro ao enviar comentário:", error);
-            }
-        }
-
-document.addEventListener("DOMContentLoaded", () => {
-const listItems = Array.from(document.querySelectorAll("li"));
-const sortedItems = listItems.sort((a, b) => {
-    const textA = a.querySelector("span").textContent.trim().toUpperCase();
-    const textB = b.querySelector("span").textContent.trim().toUpperCase();
-    return textA.localeCompare(textB);
-});
-
-const parent = listItems[0].parentNode;
-parent.innerHTML = ""; // Limpa a lista atual
-sortedItems.forEach(item => parent.appendChild(item)); // Reanexa os itens em ordem
-});
-    </script>
+    <script src="scripts.js"></script>
 </head>
 <body>
-    <header>
+    <header class="ajuste">
         <a href="index.html" aria-label="Voltar para a página inicial">Links</a>
         <h1>Animes</h1>
+        <div class="search-bar">
+            <input type="text" placeholder="Pesquisar..." id="searchInput">
+            <button type="button" onclick="searchFunction()">🔍</button>
+          </div>  
     </header>
     <main>
         <h2>Animes</h2>

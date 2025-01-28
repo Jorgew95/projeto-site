@@ -15,41 +15,132 @@ body {
     color: white;
 }
 
-header {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+.modelo {
     background: #0C0E12;
-    text-align: center;
-    padding: 2px 0; /* Ajustado para espaçamento correto */
+    padding: 10px 20px;
     color: #da0d1e;
-    font-size: 12px;
+    font-size: 13px;
+    display: flex; /* Usando flexbox */
+    justify-content: space-between; /* Espaço entre os elementos */
+    align-items: center; /* Alinha os itens verticalmente */
+    flex-wrap: wrap; /* Permite que os itens se ajustem quando necessário */
 }
 
-header a {
-    position: fixed;
-    top: 3.3%;
-    left: 1%;
-    transform: translateY(-50%); /* Centraliza verticalmente */
+.modelo h1 {
+    text-align: center;
+    flex: 1; /* O h1 ocupa o espaço disponível */
+    margin: 0;
+}
+
+.modelo a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 19px;
     background-color: #444;
-    padding: 5px 15px; /* Ajustado para mais conforto visual */
+    padding: 5px 15px;
+    border-radius: 50px;
+    font-weight: 200;
+    margin-left: auto; /* Garante que o link fique no canto esquerdo */
+}
+
+.modelo a:hover {
+    background-color: #e90a0a;
+}
+
+/* Tamanho do header */
+header {
+    padding: 20px 0; /* Ajusta o tamanho do header */
+
+}
+
+.ajuste {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0C0E12;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-between; /* Espaça os itens de maneira uniforme */
+    padding: 10px 20px;
+    color: #da0d1e;
+    font-size: 13px;
+}
+
+.ajuste {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #0C0E12;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    justify-content: space-between; /* Espaça os itens de maneira uniforme */
+    padding: 10px 20px;
+    color: #da0d1e;
+    font-size: 13px;
+}
+
+.ajuste a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 19px;
+    background-color: #444;
+    padding: 5px 15px;
     border-radius: 50px;
     font-weight: 200;
 }
 
-header a:hover {
+.ajuste a:hover {
+    background-color: #e90a0a;
+}
+
+.ajuste h1 {
+    margin: 0;
+    font-size: 25px;
+    color: rgb(211, 24, 24);
+    text-align:  center; /* Centraliza o texto do título */
+    flex-grow:1 /* Permite que o título ocupe o máximo de espaço disponível */
+    flex-shrink: 0; /* Evita que o título encolha */
+}
+
+.ajuste .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-right: 2%; /* Aumenta o espaço à direita da barra de pesquisa */
+    margin-left: 20px; /* Adiciona um pequeno espaço à esquerda da barra de pesquisa */
+}
+
+.ajuste .search-bar input {
+    width: 200px;
+    padding: 5px 10px;
+    border: 2px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+}
+
+.ajuste .search-bar button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: #444;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.ajuste .search-bar button:hover {
     background-color: #e90a0a;
 }
 
 main {
     max-width: 1800px;
-    margin: 100px auto; /* Ajustado para mais espaço do cabeçalho */
+    margin: 100px auto;
     padding: 10px;
     background: hsl(0, 0%, 13%);
     border-radius: 8px;
@@ -127,12 +218,30 @@ ul.principal-list li a:hover {
 }
 
 @media (max-width: 768px) {
-    header a {
+    .juste {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ajuste a {
         font-size: 16px;
         padding: 5px 10px;
     }
+
+    .ajuste h1 {
+        margin-bottom: 10px;
+    }
+
+    .ajuste .search-bar {
+        justify-content: center;
+    }
+
     ul.site-list li, ul.principal-list li {
         font-size: 16px;
         padding: 8px;
+    }
+
+    .ajuste .search-bar input {
+        width: 200px;
     }
 }
