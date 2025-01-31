@@ -13,3 +13,18 @@
             }
         });
     });
+
+/*funçao para footer*/
+    window.addEventListener("scroll", function() {
+        let footer = document.getElementById("footer");
+        let scrollTop = window.scrollY || document.documentElement.scrollTop;
+        let windowHeight = window.innerHeight;
+        let documentHeight = document.documentElement.scrollHeight;
+    
+        // Se o usuário rolar até o final, exibe o rodapé
+        if (scrollTop + windowHeight >= documentHeight) {
+            footer.style.display = "block";
+        } else {
+            footer.style.display = "none";
+        }
+    });

@@ -1,251 +1,252 @@
 @charset "UTF-8";
-@font-face {
-    font-family: 'n';
-    src: url(fontes/BebasNeue.woff2) format('woff2'),
-         url(fontes/BebasNeue.woff) format('woff'),
-         url(fontes/BebasNeue.otf) format('opentype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
 
-body {
-    font-family: 'n', sans-serif;
-    font-size: 16px;
+*{
     margin: 0;
     padding: 0;
-    background-color: hsl(0, 0%, 13%);
+}
+
+body{
+    background-color: rgb(43, 43, 43);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding-top: 95px;
+
+    overflow-x: hidden;
+
     color: white;
-}
 
+    height: 100vh;
 
-.modelo {
-    background: #0C0E12;
-    padding: 10px 20px;
-    color: #da0d1e;
-    font-size: 13px;
-    display: flex; /* Usando flexbox */
-    justify-content: space-between; /* Espaço entre os elementos */
-    align-items: center; /* Alinha os itens verticalmente */
-    flex-wrap: wrap; /* Permite que os itens se ajustem quando necessário */
-}
-
-.modelo h1 {
-    text-align: center;
-    flex: 1; /* O h1 ocupa o espaço disponível */
     margin: 0;
 }
 
-.modelo a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 19px;
-    background-color: #444;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-weight: 200;
-    margin-left: auto; /* Garante que o link fique no canto esquerdo */
-}
 
-.modelo a:hover {
-    background-color: #e90a0a;
-}
+header{
+    background-color: black;
 
-/* Tamanho do header */
-header {
-    padding: 20px 0; /* Ajusta o tamanho do header */
-
-}
-
-.ajuste {
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #0C0E12;
-    align-items: center; /* Alinha os itens verticalmente no centro */
-    justify-content: space-between; /* Espaça os itens de maneira uniforme */
-    padding: 10px 20px;
-    color: #da0d1e;
-    font-size: 13px;
-}
-
-.ajuste a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 19px;
-    background-color: #444;
-    padding: 5px 15px;
-    border-radius: 50px;
-    font-weight: 200;
-}
-
-.ajuste a:hover {
-    background-color: #e90a0a;
-}
-
-.ajuste h1 {
-    margin: 0;
-    font-size: 25px;
-    color: rgb(211, 24, 24);
-    text-align: center; /* Centraliza o texto do título */
-    flex-grow: 1; /* Permite que o título ocupe o máximo de espaço disponível */
-    flex-shrink: 0; /* Evita que o título encolha */
-}
-
-.ajuste .search-bar {
     display: flex;
     align-items: center;
-    gap: 5px;
-    margin-right: 10%; /* Aumenta o espaço à direita da barra de pesquisa */
-    margin-left: 20px; /* Adiciona um pequeno espaço à esquerda da barra de pesquisa */
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+
+    width: 100%;
 }
 
-.ajuste .search-bar input {
-    width: 200px;
-    padding: 5px 10px;
-    border: 2px solid #ddd;
-    border-radius: 25px;
-    font-size: 16px;
-    outline: none;
+header h1{
+    color: rgb(223, 35, 35);
+
+    font-family: Bebas Neue;
+
+    margin: 10px;
+    margin-left: 35px;
+    margin-bottom: 10px;
 }
 
-.ajuste .search-bar button {
-    padding: 8px 15px;
+
+.logo{
+    color: #df2323;
+}
+
+.pesquisa{
     border: none;
-    border-radius: 25px;
-    background-color: #444;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.ajuste .search-bar button:hover {
-    background-color: #e90a0a;
-}
-main {
-    max-width: 1700px;
-    margin: 100px auto;
-    padding: 30px;
-    background: hsl(0, 0%, 13%);
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    opacity: 60%;
+
+    padding: 5px;
+
+    background-color: black;
+
+    text-align: center;
+    
+    width: 50%;
+
+    margin-left: 30px;
+
+    color: whitesmoke;
 }
 
-ul.site-list {
-    list-style-type: none;
-    padding: 0;
+.borderline{
+    border: solid 1px;
 
+    opacity: 20%;
+
+    margin: 10px 40%;
+
+    width: 20%;
 }
 
-ul.site-list li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+a{
+    text-decoration: none;
+
+    color: rgb(253, 253, 253);
+}
+
+.ação{
+    margin-right: 20px;
+}
+
+.ação:hover{
+    background-color: rgb(73, 223, 35);
+    color: whitesmoke;
+
+    padding: 6px;
+    
+    border-radius: 10px;
+}
+
+.nav-list{
     display: flex;
-    justify-content: space-between;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-    font-size: 16px;
+    align-items: center;
+
+    list-style: none;
+  }
+
+  .series{
+    margin-right: 20px;
+
+    color: #df2323;
+
+    transition: 0.2s;
 }
 
-ul.site-list li:hover {
-    background-color: #7a7979;
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.series:hover{
+    border-bottom: 3px solid #df2323;
+
+    color: #831b1b;
+
+    transition: 0.3s;
 }
 
-ul.site-list li a {
-    color: #1746c7;
-    font-weight: normal;  
-    justify-content: space-between;
-    text-align: end;
+.comedia{
+    color: #df2323;
+
+    transition: 0.2s;
+
+    margin-right: 20px;
+}
+
+.comedia:hover{
+    border-bottom: 3px solid #df2323;
+
+    color: #831b1b;
+
+    transition: 0.3s;
+
+}
+
+.navbar{
+    margin-right: 30px;
+}
+
+button{
+    background-color: transparent;
+
+    color: whitesmoke;
+
+    border: none;
+
+    margin-right: 30px;
+
+    font-size: 20px;
+
+    display: none;
+}
+
+/*section*/
+.borderline{
+    border: solid 1px;
+
+    opacity: 20%;
+
+    margin: 10px 40%;
+
+    width: 20%;
+}
+
+
+
+
+
+
+/*começo da main*/
+
+main h1{
+    color: whitesmoke;
+
+    font-family: manrope;
+    font-weight: 100;
+
+    display: flex;
+    justify-content: center;
+
     font-size: 25px;
-}
-ul.site-list span{
+    
 
-    font-size: 25px;
+
 }
 
-ul.site-list li a:hover {
-    text-decoration: underline;
+
+
+/*ajuste nas capas*/
+
+.capas{
+    margin-top: 30px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
 }
+
+.space{
+    margin-right: 10px;
+    word-wrap: break-word;
+    width: 210px;
+    height: 312px;
+    border: 1px solid white;
+    margin-top: 60px;
+    }
+
+/*footer*/
 
 footer {
-    background-color: #0C0E12;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 1rem;
-    margin-top: 20px;
+    padding: 15px 0;
+    display: none; /* Inicialmente invisível */
+    
 }
 
-ul.principal-list {
-    list-style-type: none;
-    padding: 0;
-}
-ul.principal-list li {
-    padding: 5px 10px;
-    border-bottom: 1px solid white;
-    display: flex;
-    justify-content: space-between;
-    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+
+.content {
+    padding: 20px;
+    padding-bottom: 200px; /* Adiciona um espaço abaixo do conteúdo */
 }
 
-ul.principal-list li:hover {
-    background-color: #7a7979;
-    transform: scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
 
-ul.principal-list li a {
-    color: #e60c0c;
-    text-decoration: none;
-    font-weight: 200;
-    font-size: 25px;
-}
-
-ul.principal-list li a:hover {
-    text-decoration: underline;
-}
-
-@media (max-width: 768px) {
-    .ajuste {
-        flex-direction: column; /* Empilha os elementos na coluna */
-        align-items: flex-start; /* Alinha os itens à esquerda */
-        padding: 10px; /* Ajusta o padding */
-    }
-
-    .ajuste h1 {
-        font-size: 20px; /* Reduz o tamanho do título */
-        text-align: center; /* Centraliza o título na tela */
-        margin: 10px 0; /* Ajusta a margem ao redor do título */
-    }
-
-    .ajuste .search-bar {
-        width: 100%; /* A barra de pesquisa ocupa toda a largura */
-        margin-right: 0; /* Remove o espaçamento à direita */
-        margin-left: 0; /* Remove o espaçamento à esquerda */
-        margin-top: 10px; /* Dá um pequeno espaçamento acima da barra de pesquisa */
-    }
-
-    .ajuste .search-bar input {
-        width: 100%; /* Faz a input ocupar toda a largura disponível */
-        padding: 10px; /* Aumenta o padding para maior conforto no toque */
-    }
-
-    .ajuste .search-bar button {
-        width: 100%; /* Faz o botão ocupar toda a largura disponível */
-        padding: 10px; /* Aumenta o padding */
-        font-size: 18px; /* Ajusta o tamanho da fonte do botão */
-    }
-
-    .ajuste a {
-        font-size: 16px; /* Ajusta o tamanho do link */
-        margin-bottom: 10px; /* Dá um pequeno espaçamento abaixo do link */
+@media (max-width: 385px){
+    .name-logo{
+        font-size: 25px;
     }
 }
-    ul.site-list li, ul.principal-list li {
-        font-size: 16px;
-        padding: 8px;
-    }
 
+
+
+ul li a:hover{
+    text-decoration: double;
+    color: #df2323;
+    
+}
 

@@ -10,125 +10,83 @@
     <script src="scripts.js"></script>
 </head>
 <body>
-    <header class="ajuste">
-        <a href="index.html" aria-label="Voltar para a página inicial">Links</a>
-        <h1>Animes</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar..." id="searchInput">
-            <button type="button" onclick="searchFunction()">🔍</button>
-          </div>  
+    <header>
+        <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
+        <input class="pesquisa" id="pesquisa" placeholder="Nome do Filme">
+        <ul class="nav-list">
+            <li><a class="series" href="series.html">SÉRIES</a></li>
+            <li><a class="comedia" href="ComediaOnline.html">COMÉDIA</a></li>
+        </ul>
     </header>
     <main>
-        <h2>Animes</h2>
-        <ul class="site-list">
-            <li>
-                <span>Naruto Clássico</span>
-                <a href="naruto.html" title="Ver detalhes sobre Naruto Clássico">Naruto Clássico</a>
-            </li>
-            <li>
-                <span>Naruto Shippuden</span>
-                <a href="naruto-shippuden.html" title="Ver detalhes sobre Naruto Shippuden">Naruto Shippuden</a>
-            </li>
-            <li>
-                <span>Haikyuu!! A Batalha do Lixão</span>
-                <a href="https://drive.google.com/drive/folders/1zdQAOMJkeTUIskY60Pyy2UMDgLohHOYm" target="_blank" title="Ver detalhes sobre Haikyuu!! A Batalha do Lixão">Haikyuu!! A Batalha do Lixão</a>
-            </li>
-            <li>
-                <span>Akira</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1SRhdA8YLrQgBJ4HUh6R3Wy_cZ-9KO1SW" target="_blank" title="Ver detalhes sobre Akira">Akira</a>
-            </li>
-            <li>
-                <span>Fullmetal Alchemist </span>
-                <a href="https://drive.google.com/drive/folders/1vT2r7ZlPW6uanihDTgYr6OjaEafAh_0J" target="_blank" title="Ver detalhes sobre Fullmetal Alchemist ">Fullmetal Alchemist </a>
-            </li>
-            <li>
-                <span>Fullmetal Alchemist: Brotherhood</span>
-                <a href="https://drive.google.com/drive/folders/1KWN2zitQ6e0AKoDyoznmmJdbwpykdmTW" target="_blank" title="Ver detalhes sobre Fullmetal Alchemist: Brotherhood">Fullmetal Alchemist: Brotherhood</a>
-            </li>
-            <li>
-                <span>Frieren</span>
-                <a href="https://drive.google.com/drive/folders/1IqKgA1uiVDihrq4B6pSMbvf-jV0UR9g-" target="_blank" title="Abrir link de Frieren">Frieren</a>
-            </li>
-            <li>
-                <span>Solo Leveling</span>
-                <a href="https://drive.google.com/drive/folders/11bY2SwKT0Iknpm699DjXfQB_SAP0_uss" target="_blank" title="Abrir link de Solo Leveling">Solo Leveling</a>
-            </li>
-            <li>
-                <span>Yu Yu Hakusho</span>
-                <a href="https://drive.google.com/drive/folders/1ZsJBIUoLaM2AV5risDH2fWjrT1AGQMsF?usp=drive_link" target="_blank" title="Abrir link de Yu Yu Hakusho">Yu Yu Hakusho</a>
-            </li>
-            <li>
-                <span>Dan Da Dan</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/132MNXR-JUaJMhOtpKksLS-aDjyM-4oyC" target="_blank" title="Abrir link de Dan Da Dan">Dan Da Dan</a>
-            </li>
-            <li>
-                <span>Dragon Ball Daima</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/10WZlzzdILxImlxLeihkihajXblkYdDL8?usp=sharing" target="_blank" title="Abrir link de Dragon Ball Daima">Dragon Ball Daima</a>
-            </li>
-            <li>
-                <span>Uzumaki</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/1fS2lttzuP2V5Ndr1sQ0hom3TRi3hjb_E?usp=sharing" target="_blank" title="Abrir link de Uzumaki">Uzumaki</a>
-            </li>
-            <li>
-                <span>Rick and Morty: The anime(2024)</span>
-                <a href="https://drive.google.com/drive/u/0/mobile/folders/1MW4w6MksP6aMfHwEMQIwJxz0L2cMKp9A?usp=sharing" target="_blank" title="Abrir link de Rick and Morty: The Anime (2024)">Rick and Morty: The Anime (2024)</a>
-            </li>
-            <li>
-                <span>Os Cavaleiros do Zodíaco</span>
-                <a href="https://drive.google.com/drive/folders/1ysE7kcOpQYC_LKNCR66axZkmLKGQqjkm" target="_blank" title="Abrir link Os Cavaleiros do Zodíaco">Os Cavaleiros do Zodíaco</a>
-            </li>
-            <li>
-                <span>Jujutsu Kaisen</span>
-                <a href="jujutsu_kaisen.html"title="Abrir link de Jujutsu Kaisen">Jujutsu Kaisen</a>
-            </li>
-            <li>
-                <span>Cyberpunk: Mercenários(2022)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1-1GDJZoDnfyIiieKiFi_bFNVNigyuCfi" target="_blank" title="Abrir link Cyberpunk: Mercenários(2022)">Cyberpunk: Mercenários(2022)</a>
-            </li>
-            <li>
-                <span>Avatar: A Lenda de Aang(2005)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1oV7krXiTVTNyFrf4DHWTvfwLhvzKalWR" target="_blank" title="Abrir link Avatar: A Lenda de Aang(2005)">Avatar: A Lenda de Aang(2005)</a>
-            </li>
-            <li>
-                <span>South Park(Todas as temporadas)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1Phf33_WkxOHhYAKeNVSTdvhT2jK4n9AA" target="_blank" title="Abrir link South Park(Todas as temporadas)">South Park(Todas as temporadas)</a>
-            </li>
-            <li>
-                <span>X-Men'97(2024)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1zVurX2qL03IZ27WH0Z3RGs8ibt_iP7Jj" target="_blank" title="Abrir link X-Men'97(2024)">X-Men'97(2024)</a>
-            </li>
-            <li>
-                <span>Love, Death & Robots(2019)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1-1O1FtpdzY5UJMOjx8HyBYkSieFP7ZMo" target="_blank" title="Abrir link Love, Death & Robots(2019)">Love, Death & Robots(2019)</a>
-            </li>
-            <li>
-                <span>Attack on titan(2013)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1DjCuX5DiV_6t9y4QKMG42kxR0I9Puo7x" target="_blank" title="Abrir link Attack on titan(2013)">Attack on titan(2013)</a>
-            </li>
-            <li>
-                <span>Berserk(2016)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1eHSW-t8f_UzGkRKxsdeIoyJMX1-Xc-37" target="_blank" title="Abrir link Berserk(2016)">Berserk(2016)</a>
-            </li>
-            <li>
-                <span>One-Punch Man (2015)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1hXFQ6OMtDHfr5DrJD65oTWdSl3ougiYK" target="_blank" title="Abrir link One-Punch Man (2015)">One-Punch Man (2015)</a>
-            </li>
-            <li>
-                <span>Tokyo Revengers(2021)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1nuA_8bHgCzzds76thBuUg-xJwpqwQT6e" target="_blank" title="Abrir link Tokyo Revengers(2021)">Tokyo Revengers(2021)</a>
-            </li>
-            <li>
-                <span>Dr.Stone(2019)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/10iMkIzBRIdSNo_uQGoQi4D5eU_9_SNR0" target="_blank" title="Abrir link Dr.Stone(2019)">Dr.Stone(2019)</a>
-            </li>
-            <li>
-                <span>Hell's Paradise(2023)</span>
-                <a href="https://drive.google.com/drive/u/0/folders/1-xwE4i0F2Mf8vP01a-xCrbL6VQ2J6InJ" target="_blank" title="Abrir link Hell's Paradise(2023)">Hell's Paradise(2023)</a>
-            </li>
-        </ul>
+        <div class="content">
+            <h1>Animes</h1>
+            <section class="borderline"></section>
+            <div class="capas" id="filmes">
+
+                <!-- <div class="space" nome=""><a href="" target="_blank"><img src="" width="210" height="312" alt=""><p></p></a></div> -->
+
+                <div class="space" nome="naruto classico"><a href="naruto.html"><img src="imagens/naruto_classico.webp" width="210" height="312" alt=""><p>Naruto Clássico</p></a></div>
+
+                <div class="space" nome="naruto Shippuden"><a href="naruto-shippuden.html"><img src="imagens/naruto_shippuden.jpg" width="210" height="312" alt=""><p>Naruto Shippuden</p></a></div>
+
+                <div class="space" nome="haikyuu!! a Batalha do lixão"><a href="https://drive.google.com/file/d/10AVB2H80ultVyIB5OjKZ_mkWkyIWmgzB/view?usp=sharingm" target="_blank"><img src="imagens/haikyu_batalha.webp" width="210" height="312" alt=""><p>Filme:Haikyuu!! A Batalha do Lixão</p></a></div>
+
+                <div class="space" nome="castlevania"><a href="castlevania.html"><img src="imagens/castlevania.jpg" width="210" height="312" alt=""><p>Castlevania</p></a></div>
+
+                <div class="space" nome="o senhor dos anéis – A Guerra dos Rohirrim:"><a href="https://drive.google.com/file/d/1e2SlA1CV_fZxvtXyuadOkiyCtLTVNH_2/view?usp=sharing" target="_blank"><img src="imagens/senhor_rohirrim.webp" width="210" height="312" alt=""><p>Filme:O Senhor dos Anéis – A Guerra dos Rohirrim</p></a></div>
+
+                <div class="space" nome="akira"><a href="https://drive.google.com/drive/u/0/folders/1SRhdA8YLrQgBJ4HUh6R3Wy_cZ-9KO1SW" target="_blank"><img src="imagens/akira.webp" width="210" height="312" alt=""><p>Akira</p></a></div>
+
+                <div class="space" nome="fullmetal Alchemist"><a href="https://drive.google.com/drive/folders/1vT2r7ZlPW6uanihDTgYr6OjaEafAh_0J" target="_blank"><img src="imagens/fullmetal.webp" width="210" height="312" alt=""><p>Fullmetal Alchemist</p></a></div>
+                
+                <div class="space" nome="frieren"><a href="https://drive.google.com/drive/folders/1IqKgA1uiVDihrq4B6pSMbvf-jV0UR9g-" target="_blank"><img src="imagens/frieren.webp" width="210" height="312" alt=""><p>Frieren</p></a></div>
+
+                <div class="space" nome="solo leveling"><a href="https://drive.google.com/drive/folders/11bY2SwKT0Iknpm699DjXfQB_SAP0_uss" target="_blank"><img src="imagens/solo_leveling.webp" width="210" height="312" alt=""><p>Solo Leveling</p></a></div>
+
+                <div class="space" nome="yu yu hakusho"><a href="https://drive.google.com/drive/folders/1ZsJBIUoLaM2AV5risDH2fWjrT1AGQMsF?usp=drive_link" target="_blank"><img src="imagens/yuyu_hakusho.webp" width="210" height="312" alt=""><p>Yu Yu Hakusho</p></a></div>
+
+                <div class="space" nome="dan da dan"><a href="https://drive.google.com/drive/u/0/mobile/folders/132MNXR-JUaJMhOtpKksLS-aDjyM-4oyC" target="_blank"><img src="imagens/dandadan.webp" width="210" height="312" alt=""><p>Dan Da Dan</p></a></div>
+
+                <div class="space" nome="dragon ball daima"><a href="https://drive.google.com/drive/u/0/mobile/folders/10WZlzzdILxImlxLeihkihajXblkYdDL8?usp=sharing" target="_blank"><img src="imagens/dragon_daima.webp" width="210" height="312" alt=""><p>Dragon Ball Daima</p></a></div>
+
+                <div class="space" nome="uzumaki"><a href="https://drive.google.com/drive/u/0/mobile/folders/1fS2lttzuP2V5Ndr1sQ0hom3TRi3hjb_E?usp=sharing" target="_blank"><img src="imagens/uzumaki.webp" width="210" height="312" alt=""><p>Uzumaki</p></a></div>
+
+                <div class="space" nome="rick_and_morty_anime"><a href="https://drive.google.com/drive/u/0/mobile/folders/1MW4w6MksP6aMfHwEMQIwJxz0L2cMKp9A?usp=sharing" target="_blank"><img src="imagens/rick_and_morty_anime.webp" width="210" height="312" alt=""><p>Rick and Morty: The Anime (2024)</p></a></div>
+                
+                <div class="space" nome="cavaleiros_do_zodiaco"><a href="https://drive.google.com/drive/folders/1ysE7kcOpQYC_LKNCR66axZkmLKGQqjkm" target="_blank"><img src="imagens/cavaleiros_do_zodiaco.webp" width="210" height="312" alt=""><p>Os Cavaleiros do Zodíaco</p></a></div>
+                
+                <div class="space" nome="jujutsu_kaisen"><a href="jujutsu_kaisen.html" target="_blank"><img src="imagens/jujutsu_kaisen.webp" width="210" height="312" alt=""><p>Jujutsu Kaisen</p></a></div>
+                
+                <div class="space" nome="cyberpunk_mercenarios"><a href="https://drive.google.com/drive/u/0/folders/1-1GDJZoDnfyIiieKiFi_bFNVNigyuCfi" target="_blank"><img src="imagens/cyberpunk_mercenarios.webp" width="210" height="312" alt=""><p>Cyberpunk: Mercenários (2022)</p></a></div>
+                
+                <div class="space" nome="avatar_a_lenda_de_aang"><a href="https://drive.google.com/drive/u/0/folders/1oV7krXiTVTNyFrf4DHWTvfwLhvzKalWR" target="_blank"><img src="imagens/avatar_a_lenda_de_aang.webp" width="210" height="312" alt=""><p>Avatar: A Lenda de Aang (2005)</p></a></div>
+                
+                <div class="space" nome="south_park"><a href="https://drive.google.com/drive/u/0/folders/1Phf33_WkxOHhYAKeNVSTdvhT2jK4n9AA" target="_blank"><img src="imagens/south_park.webp" width="210" height="312" alt=""><p>South Park (Todas as temporadas)</p></a></div>
+                
+                <div class="space" nome="xmen_97"><a href="https://drive.google.com/drive/u/0/folders/1zVurX2qL03IZ27WH0Z3RGs8ibt_iP7Jj" target="_blank"><img src="imagens/xmen_97.webp" width="210" height="312" alt=""><p>X-Men '97 (2024)</p></a></div>
+                
+                <div class="space" nome="love_death_robots"><a href="https://drive.google.com/drive/u/0/folders/1-1O1FtpdzY5UJMOjx8HyBYkSieFP7ZMo" target="_blank"><img src="imagens/love_death_robots.webp" width="210" height="312" alt=""><p>Love, Death & Robots (2019)</p></a></div>
+                
+                <div class="space" nome="attack_on_titan"><a href="https://drive.google.com/drive/u/0/folders/1DjCuX5DiV_6t9y4QKMG42kxR0I9Puo7x" target="_blank"><img src="imagens/attack_on_titan.webp" width="210" height="312" alt=""><p>Attack on Titan (2013)</p></a></div>
+                
+                <div class="space" nome="berserk"><a href="https://drive.google.com/drive/u/0/folders/1eHSW-t8f_UzGkRKxsdeIoyJMX1-Xc-37" target="_blank"><img src="imagens/berserk.webp" width="210" height="312" alt=""><p>Berserk (2016)</p></a></div>
+                
+                <div class="space" nome="one_punch_man"><a href="https://drive.google.com/drive/u/0/folders/1hXFQ6OMtDHfr5DrJD65oTWdSl3ougiYK" target="_blank"><img src="imagens/one_punch_man.webp" width="210" height="312" alt=""><p>One-Punch Man (2015)</p></a></div>
+                
+                <div class="space" nome="tokyo_revengers"><a href="https://drive.google.com/drive/u/0/folders/1nuA_8bHgCzzds76thBuUg-xJwpqwQT6e" target="_blank"><img src="imagens/tokyo_revengers.webp" width="210" height="312" alt=""><p>Tokyo Revengers (2021)</p></a></div>
+                
+                <div class="space" nome="dr_stone"><a href="https://drive.google.com/drive/u/0/folders/10iMkIzBRIdSNo_uQGoQi4D5eU_9_SNR0" target="_blank"><img src="imagens/dr_stone.webp" width="210" height="312" alt=""><p>Dr. Stone (2019)</p></a></div>
+                
+                <div class="space" nome="hells_paradise"><a href="https://drive.google.com/drive/u/0/folders/1-xwE4i0F2Mf8vP01a-xCrbL6VQ2J6InJ" target="_blank"><img src="imagens/hells_paradise.webp" width="210" height="312" alt=""><p>Hell's Paradise (2023)</p></a></div>
+
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 Anime Search. All rights reserved.</p>
+    <footer id="footer">
+        <p>&copy; 2025 Movie Search. All rights reserved.</p>
     </footer>
+    <!-- Mover o script para o final -->
+    <script src="scripts.js"></script>
 </body>
 </html>
