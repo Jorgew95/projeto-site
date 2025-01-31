@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(43, 43, 43);
+
+    font-family: sans-serif;
+
+    padding-top: 95px;
+
+    overflow-x: hidden;
+}
+
+.space span {
+    display: none; /* Esconde o texto inicialmente */
+    text-align: center;
+    margin-bottom: 15px;
+    opacity: 0; /* Inicialmente, o texto está invisível */
+    position: absolute;
+    top: 50%; /* Posiciona o texto no meio da imagem */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza o texto */
+    color: rgb(238, 24, 24); /* Cor do texto */
+    font-size: 18px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza a transição de opacidade */
+    font-weight: bolder;
+}
+
+.space:hover span {
+    display: block; /* Exibe o texto quando o mouse passa por cima */
+    opacity: 1; /* Torna o texto visível com uma transição suave */
+}
+
+.space {
+    position: relative; /* Necessário para posicionar o texto sobre a imagem */
+    display: inline-block;
+}
+
+.space a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: rgb(253, 253, 253);
+    position: relative; /* Necessário para que o :hover funcione corretamente */
+}
+
+.space img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    transition: opacity 0.3s ease-in-out; /* Suaviza a transição da opacidade da imagem */
+}
+
+.space:hover img {
+    opacity: 0.7; /* Reduz a opacidade da imagem quando o mouse passa por cima */
+    filter: brightness(10%); /* Torna a imagem mais escura */
+}
+header{
+    background-color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+}
+
+.navbar{
+    margin-right: 30px;
+}
+
+button{
+    background-color: transparent;
+
+    color: whitesmoke;
+
+    border: none;
+
+    margin-right: 30px;
+
+    font-size: 20px;
+
+    display: none;
+}
+
+header h1{
+    color: rgb(223, 35, 35);
+
+    font-family: Bebas Neue;
+
+    margin: 10px;
+    margin-left: 35px;
+}
+
+.pesquisa{
+    border: none;
+    border-radius: 10px;
+
+    opacity: 60%;
+
+    padding: 5px;
+
+    background-color: black;
+
+    text-align: center;
+    
+    width: 50%;
+
+    margin-left: 30px;
+
+    color: whitesmoke;
+}
+
+.borderline{
+    border: solid 1px;
+
+    opacity: 20%;
+
+    margin: 10px 40%;
+
+    width: 20%;
+}
+
+.logo{
+    color: #df2323;
+}
+
+a{
+    text-decoration: none;
+
+    color: rgb(253, 253, 253);
+}
+
+.ação{
+    margin-right: 20px;
+}
+
+.ação:hover{
+    background-color: rgb(73, 223, 35);
+    color: whitesmoke;
+
+    padding: 6px;
+    
+    border-radius: 10px;
+}
+
+.comedia{
+    color: #df2323;
+
+    transition: 0.2s;
+}
+
+.comedia:hover{
+    border-bottom: 3px solid #df2323;
+
+    color: #831b1b;
+
+    transition: 0.3s;
+
+}
+
+.online{
+    margin-left: 10px;
+}
+
+.online:hover{
+    background-color: rgb(223, 35, 35);
+    color: whitesmoke;
+
+    padding: 6px;
+    
+    border-radius: 10px;
+}
+
+.series{
+    margin-right: 10px;
+
+    color: #df2323;
+
+    transition: 0.2s;
+}
+
+.series:hover{
+    border-bottom: 3px solid #df2323;
+
+    color: #831b1b;
+
+    transition: 0.3s;
+}
+
+@media (max-width: 385px){
+    .name-logo{
+        font-size: 25px;
+    }
+}
+
+/*começo da main*/
+
+main h1{
+    color: whitesmoke;
+
+    font-family: manrope;
+    font-weight: 100;
+
+    display: flex;
+    justify-content: center;
+
+    font-size: 25px;
+}
+
+.capas{
+    margin-top: 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+/*footer*/
+
+footer{
+    background-color: black;
+
+    text-align: center;
+
+    color: whitesmoke;
+
+    font-size: 16px;
+}
+
+footer p{
+    padding: 10px;
+
+    font-family: manrope;
+    font-weight: 100;
+}
+
+
+/*Player area*/
+
+.player{
+    margin-right: 30px;
+
+    text-align: center;
+
+    width: 100%;
+}
+
+.playergo{
+
+    text-align: center;
+
+}
+
+/* This is a compiled file, you should be editing the file in the templates directory */
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+  
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+  
+  .pace-inactive {
+    display: none;
+  }
+  
+  .pace .pace-progress {
+    background: rgb(73, 223, 35);;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 3px;
+  }
+  
+  .nav-list{
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+  }
+
+@media (max-width: 465px){
+    .online{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 691px){
+
+    .nav-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        display: none;
+
+        font-size: 1rem;
+
+        padding: 5px;
+
+        margin: 0;
+
+        border-radius: 10px 0 10px 10px;
+
+        position: absolute;
+        top: 10vh;
+        right: 0;
+
+        background-color: black;
+
+        height: 71vh;
+        width: 50vw;
+
+        animation: opacidade 1s;
+    }
+
+    button{
+        display: block;
+
+        cursor: pointer;
+    }
+
+}
+
+
+
+
+.button-upper {
+    background-color: rgb(73, 223, 35);;
+
+    border-radius: 100px;
+
+    width: 62px;
+    height: 62px;
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    cursor: pointer;
+
+    display: none;
+
+    color: white;
+
+    text-align: center;
+
+    padding-top: 20px;
+    
+} 
+
+.loader-wrapper{
+    background-color: rgb(43, 43, 43);
+
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 999;
+}
+
+.loader{
+    display: inline-block;
+
+    width: 30px;
+    height: 30px;
+
+    position: relative;
+
+    border: 4px solid rgb(73, 223, 35);
+
+    animation: loader 2s infinite ease;
+}
+
+@keyframes loader {
+    0% { transform: rotate(0deg);}
+    25% { transform: rotate(180deg);}
+    50% { transform: rotate(180deg);}
+    75% { transform: rotate(360deg);}
+    100% { transform: rotate(360deg);}
+  }
+
+  .content{
+      display: none;
+  }
+
+  iframe{
+      width: 50rem;
+      height: 20rem;
+  }
+
+  @media (max-width: 900px){
+    iframe{
+        width: 23rem;
+        height: 10rem;
+    }
+  }
+
+  .download-go{
+      color: rgb(73, 223, 35);
+
+      margin-top: 30px;
+
+      opacity: 50%;
+  }
+
+  .download-go:hover{
+      opacity: 100%;
+
+      cursor: pointer;
+  }
+
+  .eps{
+    margin-bottom: 30px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.eps a{
+    margin-left: 10px;
+    margin-top: 10px;
+
+    border: 1px solid;
+
+    padding: 4px;
+
+    border-radius: 10px;
+
+}
+
+.eps a:hover{
+    background-color: rgb(73, 223, 35);
+
+    color: black;
+}
