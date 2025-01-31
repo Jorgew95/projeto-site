@@ -250,3 +250,51 @@ ul li a:hover{
     
 }
 
+
+/* lista */
+.lista-container {
+    background-color: rgb(43, 43, 43);
+    border-radius: 8px;
+    padding: 20px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.site-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-list li {
+    background-color: #fff;
+    border-radius: 6px;
+    margin: 10px 0;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.site-list li:hover {
+    background-color: #e0e0e0;
+}
+
+.site-list li span {
+    font-weight: bold;
+    margin-right: 15px;
+    color: #333;
+}
+
+.site-list li a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.site-list li a:hover {
+    color: #0056b3;
+}
+
