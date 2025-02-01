@@ -23,6 +23,9 @@ body{
     margin: 0;
 }
 
+::-webkit-input-placeholder {
+    color: red;
+ }
 
 header{
     background-color: black;
@@ -35,6 +38,8 @@ header{
     top: 0;
 
     width: 100%;
+
+    
 }
 
 header h1{
@@ -62,7 +67,7 @@ header h1{
 
     padding: 5px;
 
-    background-color: black;
+    background-color: rgb(41, 39, 39);
 
     text-align: center;
     
@@ -70,7 +75,7 @@ header h1{
 
     margin-left: 30px;
 
-    color: whitesmoke;
+    color: rgb(216, 20, 20);
 }
 
 .borderline{
@@ -81,6 +86,8 @@ header h1{
     margin: 10px 40%;
 
     width: 20%;
+
+    color: #df2323;
 }
 
 a{
@@ -96,7 +103,7 @@ a{
 }
 
 .ação:hover{
-    background-color: rgb(73, 223, 35);
+    background-color: rgb(219, 15, 15);
     color: whitesmoke;
 
     padding: 6px;
@@ -117,6 +124,8 @@ a{
     color: #df2323;
 
     transition: 0.2s;
+
+    margin-left: 20px;
 }
 
 .series:hover{
@@ -151,7 +160,7 @@ a{
 button{
     background-color: transparent;
 
-    color: whitesmoke;
+    color: rgb(231, 14, 14);
 
     border: none;
 
@@ -239,15 +248,6 @@ footer {
     padding-bottom: 200px; /* Adiciona um espaço abaixo do conteúdo */
 }
 
-
-@media (max-width: 385px){
-    .name-logo{
-        font-size: 25px;
-    }
-}
-
-
-
 ul li a:hover{
     text-decoration: double;
     color: #df2323;
@@ -302,5 +302,29 @@ ul li a:hover{
 
 .site-list li a:hover {
     color: #0056b3;
+}
+
+@media (max-width: 465px){
+    .series{
+        font-size: small;
+    }
+
+    .comedia{
+        font-size: small;
+    }
+
+    .logo{
+        font-size: large;
+    }
+
+    .navbar{
+        font-size: smaller;
+    }
+}
+
+@media (max-width: 691px){
+
+   
+
 }
 
