@@ -245,7 +245,7 @@ footer {
 
 .content {
     padding: 20px;
-    padding-bottom: 200px; /* Adiciona um espaço abaixo do conteúdo */
+    padding-bottom: 80px; /* Adiciona um espaço abaixo do conteúdo */
 }
 
 ul li a:hover{
