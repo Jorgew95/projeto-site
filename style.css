@@ -320,11 +320,38 @@ ul li a:hover{
     .navbar{
         font-size: smaller;
     }
+
+    .space img {
+        width: 100px; /* Ajuste o tamanho conforme necessário */
+        height: auto; /* Mantém a proporção original */
+    }   
+
+    .space{
+        width: 100px; /* Ajuste o tamanho conforme necessário */
+        height: auto; /* Mantém a proporção original */ 
+        border:  #e0e0e0;   
+    }
+   
 }
 
 @media (max-width: 691px){
 
-   
+    .series{
+        font-size: small;
+    }
+
+    .comedia{
+        font-size: small;
+    }
+
+    .logo{
+        font-size: large;
+    }
+
+    .navbar{
+        font-size: smaller;
+    }
+
 
 }
 
