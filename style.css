@@ -53,7 +53,9 @@ header h1{
 }
 
 .pesquisa{
+
     border: none;
+    
     border-radius: 10px;
 
     opacity: 60%;
@@ -85,6 +87,8 @@ a{
     text-decoration: none;
 
     color: rgb(253, 253, 253);
+
+    text-align: center;
 }
 
 .ação{
@@ -107,7 +111,7 @@ a{
     list-style: none;
   }
 
-  .series{
+.series{
     margin-right: 20px;
 
     color: #df2323;
