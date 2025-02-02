@@ -1,19 +1,22 @@
 /*funçao para barra de pesquisa*/
-    document.getElementById("pesquisa").addEventListener("input", function() {
-        let input = this.value.toLowerCase().trim();
-        let filmes = document.querySelectorAll(".space");
-    
-        filmes.forEach(filme => {
-            let nomeFilme = filme.querySelector("span").innerText.toLowerCase().trim();
-            
-            if (nomeFilme.includes(input)) {
-                filme.style.display = "block"; // Mostra o filme se corresponder
-            } else {
-                filme.style.display = "none"; // Esconde se não corresponder
-            }
-        });
-    });
+document.addEventListener("DOMContentLoaded", function() {
+    const pesquisaInput = document.getElementById("pesquisa");
+    const filmesDiv = document.getElementById("filmes");
+    const filmes = filmesDiv.getElementsByClassName("space");
 
+    pesquisaInput.addEventListener("input", function() {
+        const pesquisaTermo = pesquisaInput.value.toLowerCase();
+
+        for (let i = 0; i < filmes.length; i++) {
+            const filmeNome = filmes[i].getAttribute("nome").toLowerCase();
+            if (filmeNome.includes(pesquisaTermo)) {
+                filmes[i].style.display = ""; // Mostra o filme
+            } else {
+                filmes[i].style.display = "none"; // Esconde o filme
+            }
+        }
+    });
+});
 /*funçao para footer*/
     window.addEventListener("scroll", function() {
         let footer = document.getElementById("footer");
