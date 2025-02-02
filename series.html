@@ -8,45 +8,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
     <script src="scripts.js"></script>
+    <script src="ordem_alfabetica.js"></script>
 </head>
-
 <body>
-    <header class="ajuste">
-        <a href="index.html" aria-label="Voltar para a página inicial">Links</a>
-        <h1>Séries</h1>
-        <div class="search-bar">
-            <input type="text" placeholder="Pesquisar..." id="searchInput">
-            <button type="button" onclick="searchFunction()">🔍</button>
-          </div>  
+    <header>
+        <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
+        <input class="pesquisa" id="pesquisa" placeholder="Nome do Filme">
+        <ul class="nav-list">
+            <li><a class="series" href="series.html">SÉRIES</a></li>
+            <li><a class="comedia" href="filmes2.html">FILMES</a></li>
+        </ul>
     </header>
     <main>
-        <h2>Séries</h2>
-        <ul class="site-list">
-            <li><span>Ruptura</span>
-            <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank" title="Ver detalhes sobre Ruptura">Ruptura</a>
-            </li>
-            <li><span>Nível Secreto(2024)</span>
-            <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank" title="Ver detalhes sobre Nível Secreto(2024)">Nível Secreto(2024)</a>
-            </li>
-            <li><span>SENNA (2024)</span>
-            <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank" title="Ver detalhes sobre SENNA (2024)">SENNA (2024)</a>
-            </li>
-            <li><span>Chernobyl (2019)</span>
-            <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank" title="Ver detalhes sobre Chernobyl (2019)">Chernobyl (2019)</a>
-            </li>
-            <li><span>Grey's Anatomy</span>
-            <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW" target="_blank" title="Ver detalhes sobre Grey's Anatomy">Grey's Anatomy</a>
-            </li>
-            <li><span>AVATAR O ÚLTIMO MESTRE DO AR -SERIE 2024</span>
-            <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83" target="_blank" title="Ver detalhes sobre AVATAR O ÚLTIMO MESTRE DO AR -SERIE 2024">AVATAR O ÚLTIMO MESTRE DO AR -SERIE 2024</a>
-            </li>
-            <li><span>Dexter(2006)</span>
-            <a href="https://drive.google.com/drive/u/2/folders/1EKDGT7OAhsd7JtB2oa9EtffyqJKaA_VN" target="_blank" title="Ver detalhes sobre Dexter(2006)">Dexter(2006)</a>
-            </li>
-        </ul>
+        <div class="content">
+            <h1>Séries</h1>
+            <section class="borderline"></section>
+            <div class="capas" id="filmes">
+                <!-- <div class="space" nome=""><a href="" target="_blank"><img src="" width="210" height="312" alt=""><p></p></a></div> -->
+
+                <div class="space" nome="ruptura"><a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" width="210" height="312" alt=""><p>Ruptura</p></a></div>
+
+                <div class="space" nome="secret level(2024)"><a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" width="210" height="312" alt=""><p>Secret Level(2024)</p></a></div>
+
+                <div class="space" nome="senna"><a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" width="210" height="312" alt=""><p>Senna(2024)</p></a></div>
+
+                <div class="space" nome="chernobyl"><a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" width="210" height="312" alt=""><p>Chernobyl</p></a></div>
+
+                <div class="space" nome="grey's anatomy"><a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW" target="_blank"><img src="imagens/greys_anatomy.webp" width="210" height="312" alt=""><p>Grey's Anatomy</p></a></div>
+
+                <div class="space" nome="avatar o último mestre do Ar(2024)"><a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83" target="_blank"><img src="imagens/avatar_serie.webp" width="210" height="312" alt=""><p>Avatar o Último Mestre Do Ar(2024)</p></a></div>
+                
+                <div class="space" nome="dexter"><a href="https://drive.google.com/drive/u/2/folders/1EKDGT7OAhsd7JtB2oa9EtffyqJKaA_VN" target="_blank"><img src="imagens/dexter.webp" width="210" height="312" alt=""><p>Dexter(2006)</p></a></div>
+
+            </div>
+        </div>
     </main>
-    <footer>
+    <footer id="footer">
         <p>&copy; 2025 Movie Search. All rights reserved.</p>
     </footer>
+    <!-- Mover o script para o final -->
+    <script src="scripts.js"></script>
 </body>
 </html>

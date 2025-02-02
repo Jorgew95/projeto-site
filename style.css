@@ -43,7 +43,7 @@ header{
 }
 
 header h1{
-    color: rgb(223, 35, 35);
+    color: rgb(241, 12, 12);
 
     font-family: Bebas Neue, sans-serif;
 
@@ -73,7 +73,7 @@ header h1{
     
     width: 50%;
 
-    margin-left: 30px;
+    margin-left: 80px;
 
     color: rgb(216, 20, 20);
 }
@@ -88,6 +88,8 @@ header h1{
     width: 20%;
 
     color: #df2323;
+
+    text-align: center;
 }
 
 a{
@@ -142,6 +144,8 @@ a{
     transition: 0.2s;
 
     margin-right: 20px;
+
+    
 }
 
 .comedia:hover{
