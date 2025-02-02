@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
     pesquisaInput.addEventListener("input", function() {
         const pesquisaTermo = pesquisaInput.value.toLowerCase();
 
-        for (let i = 0; i < filmes.length; i++) {
-            const filmeNome = filmes[i].getAttribute("nome").toLowerCase();
+        for (const element of filmes) {
+            const filmeNome = element.getAttribute("nome").toLowerCase();
             if (filmeNome.includes(pesquisaTermo)) {
-                filmes[i].style.display = ""; // Mostra o filme
+                element.style.display = ""; // Mostra o filme
             } else {
-                filmes[i].style.display = "none"; // Esconde o filme
+                element.style.display = "none"; // Esconde o filme
             }
         }
     });
