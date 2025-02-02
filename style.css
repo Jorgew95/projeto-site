@@ -45,7 +45,7 @@ header{
 header h1{
     color: rgb(223, 35, 35);
 
-    font-family: Bebas Neue;
+    font-family: Bebas Neue, sans-serif;
 
     margin: 10px;
     margin-left: 35px;
@@ -237,15 +237,15 @@ footer {
     background-color: black;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 10px 0;
     display: none; /* Inicialmente invisível */
     
 }
 
 
 .content {
-    padding: 20px;
-    padding-bottom: 80px; /* Adiciona um espaço abaixo do conteúdo */
+    padding: 15px;
+    padding-bottom: 110px; /* Adiciona um espaço abaixo do conteúdo */
 }
 
 ul li a:hover{
