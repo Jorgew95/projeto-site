@@ -73,8 +73,6 @@ header h1{
     
     width: 50%;
 
-    margin-left: 80px;
-
     color: rgb(216, 20, 20);
 }
 
@@ -308,6 +306,62 @@ ul li a:hover{
 .site-list li a:hover {
     color: #0056b3;
 }
+
+/* layout do menu */
+
+.menu {
+    position: relative;
+}
+.menu-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.menu-button div {
+    width: 30px;
+    height: 4px;
+    background: rgb(231, 8, 8);
+    border-radius: 2px;
+
+}
+.menu-options {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: rgb(36, 35, 35);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.menu-options li {
+    padding: 10px;
+    cursor: pointer;
+    color: black;
+    font-family: Bebas Neue, sans-serif;
+    
+}
+
+.menu-options a{
+    color: red;
+}
+
+.menu-options li:hover {
+    background: #585757;
+}
+.menu.open .menu-options {
+    display: block;
+}
+
+
+
+/* configurações para telas menores */
 
 @media (max-width: 465px){
     .series{

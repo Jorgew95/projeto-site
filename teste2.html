@@ -86,11 +86,18 @@
     
     <header>
         <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
-        <ul class="nav-list">
-            <li><a class="series" href="series.html">SÉRIES</a></li>
-            <li><a class="comedia" href="animes_e_desenhos.html">ANIMES</a></li>
-            <li><a class="comedia" href="filmes.html">VOLTAR</a></li>
-        </ul>
+        <div class="menu">
+            <button class="menu-button" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <ul class="menu-options">
+                <li><a href="animes_e_desenhos.html">ANIMES E DESENHOS</a></li>
+                <li><a href="series.html">SÉRIES</a></li>
+                <li><a href="filmes.html">FILMES</a></li>
+            </ul>
+        </div>
     </header>
 
     <main id="content">
@@ -125,6 +132,8 @@
     </footer>
 
     <script>
+        /* função do video */
+
         document.querySelectorAll(".videoLink").forEach(link => {
             link.addEventListener("click", function(event) {
                 event.preventDefault(); 
@@ -143,6 +152,13 @@
             document.getElementById("videoContainer").style.display = "none"; 
             document.getElementById("content").classList.remove("hidden"); 
         });
+
+        /* função do menu*/
+
+         function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('open');
+        }
+    </script>
     </script>
 
 </body>

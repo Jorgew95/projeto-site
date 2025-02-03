@@ -31,3 +31,4 @@ document.addEventListener("DOMContentLoaded", function() {
             footer.style.display = "none";
         }
     });
+
