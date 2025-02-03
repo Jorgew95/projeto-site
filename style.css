@@ -87,7 +87,7 @@ header h1{
 
     width: 20%;
 
-    color: #df2323;
+    color: #e61717;
 
     text-align: center;
 }
@@ -250,6 +250,7 @@ footer {
 .content {
     padding: 15px;
     padding-bottom: 110px; /* Adiciona um espaço abaixo do conteúdo */
+    
 }
 
 ul li a:hover{
