@@ -338,6 +338,13 @@ ul li a:hover{
    
 }
 
+.video {
+    text-align: center;
+    margin-top: 20px;
+    width: 920;
+    height:520;
+}
+
 @media (max-width: 691px){
 
     .series{
@@ -354,6 +361,11 @@ ul li a:hover{
 
     .navbar{
         font-size: smaller;
+    }
+
+    .video{
+       width: 420; 
+       height: 210;
     }
 
 
