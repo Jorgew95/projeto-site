@@ -344,11 +344,12 @@ ul li a:hover{
     padding: 10px;
     cursor: pointer;
     color: black;
-    font-family: Bebas Neue, sans-serif;
     
 }
 
 .menu-options a{
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: bolder;
     color: red;
 }
 
@@ -373,7 +374,7 @@ ul li a:hover{
     }
 
     .logo{
-        font-size: large;
+        font-size: 25px;
     }
 
     .navbar{
@@ -405,7 +406,7 @@ ul li a:hover{
     }
 
     .logo{
-        font-size: large;
+        font-size: 25px;
     }
 
     .navbar{
