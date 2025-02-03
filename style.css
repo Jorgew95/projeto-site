@@ -196,7 +196,7 @@ button{
 main h1{
     color: whitesmoke;
 
-    font-family: manrope;
+    font-family: manrope, sans-serif;
     font-weight: 100;
 
     display: flex;
