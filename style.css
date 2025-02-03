@@ -339,11 +339,6 @@ ul li a:hover{
    
 }
 
-.video {
-    text-align: center;
-    margin-top: 20px;
-    
-}
 
 @media (max-width: 691px){
 
@@ -361,12 +356,6 @@ ul li a:hover{
 
     .navbar{
         font-size: smaller;
-    }
-
-    .video iframe{
-       width: 320px; 
-       height: 210px;
-       text-align: center;
     }
 
 
