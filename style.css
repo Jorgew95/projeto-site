@@ -460,7 +460,20 @@ iframe {
         height: auto; /* Mantém a proporção original */ 
         border:  #e0e0e0;   
     }
-   
+
+    #closeVideo {
+    right: 40px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(241, 241, 241);
+    border: none;
+    cursor: pointer;
+    display: block; /* Garante que o botão apareça */
+    margin: 40px auto;
+    border-radius: 5px;
+}
 }
 
 
