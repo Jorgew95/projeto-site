@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busque e explore uma lista de filmes como Inception, Avatar, Titanic e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
+    <title>Séries Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
+    <script src="scripts.js"></script>
+    <script src="ordem_alfabetica.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
+        <input class="pesquisa" id="pesquisa" placeholder="Pesquise aqui...">
+        <div class="menu">
+            <button class="menu-button" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <ul class="menu-options">
+                <li><a href="animes_e_desenhos.html">ANIMES E DESENHOS</li>
+                <li><a href="teste2.html">TESTE</a></li>
+                <li><a href="filmes.html">FILMES</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        
+            <h1>Séries</h1>
+            <section class="borderline"></section>
+            
+
+            <div class="series" id="seriesExample">
+                <h2>Ruptura</h2>
+                <div class="seasons">
+                    <!-- Temporada 1 -->
+                    <div class="season">
+                        <h3>Temporada 1</h3>
+                        <ul class="episodes">
+                            <li><a href="#" class="videoLink" data-src="https://drive.google.com/file/d/1on29YWIWxAtvuC7SlRGEkVwwJM7Hrljk/preview" width="640" height="480" allow="autoplay" width="640" height="480" allow="autoplay" data-season="1" data-episode="1">Episódio 1</a></li>
+                            <li><a href="#" class="videoLink" data-src="video2.mp4" data-season="1" data-episode="2">Episódio 2</a></li>
+                            <li><a href="#" class="videoLink" data-src="video3.mp4" data-season="1" data-episode="3">Episódio 3</a></li>
+                        </ul>
+                    </div>
+            
+                    <!-- Temporada 2 -->
+                    <div class="season">
+                        <h3>Temporada 2</h3>
+                        <ul class="episodes">
+                            <li><a href="#" class="videoLink" data-src="video4.mp4" data-season="2" data-episode="1">Episódio 1</a></li>
+                            <li><a href="#" class="videoLink" data-src="video5.mp4" data-season="2" data-episode="2">Episódio 2</a></li>
+                            <li><a href="#" class="videoLink" data-src="video6.mp4" data-season="2" data-episode="3">Episódio 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="videoContainer" style="display: none;">
+                <button id="closeVideo">X</button>
+                <h2 id="videoTitle"></h2>
+                <iframe id="videoFrame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        
+    </main>
+    <footer id="footer">
+        <p>&copy; 2025 Movie Search. All rights reserved.</p>
+    </footer>
+    <!-- Mover o script para o final -->
+    <script src="scripts.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('open');
+        }
+    </script>
+    <script>
+        document.querySelectorAll(".videoLink").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault();
+
+        let videoSrc = this.getAttribute("data-src");  // Obtém o link do vídeo
+        let season = this.getAttribute("data-season"); // Obtém a temporada
+        let episode = this.getAttribute("data-episode"); // Obtém o episódio
+
+        // Atualiza o src do iframe de vídeo
+        document.getElementById("videoFrame").src = videoSrc;
+
+        // Atualiza o título da série, temporada e episódio
+        document.getElementById("videoTitle").innerText = `Temporada ${season} - Episódio ${episode}`;
+
+        // Exibe o container de vídeo e esconde o conteúdo da página
+        document.getElementById("videoContainer").style.display = "block";
+        document.getElementById("content").classList.add("hidden");
+
+        // Esconde o header quando o vídeo for aberto
+        document.querySelector('header').style.display = 'none';
+    });
+});
+
+document.getElementById("closeVideo").addEventListener("click", function() {
+    // Limpa o conteúdo do vídeo
+    document.getElementById("videoFrame").src = "";
+
+    // Esconde o container de vídeo e restaura o conteúdo da página
+    document.getElementById("videoContainer").style.display = "none";
+    document.getElementById("content").classList.remove("hidden");
+
+    // Restaura o header quando o vídeo for fechado
+    document.querySelector('header').style.display = 'flex';
+});
+    </script>
+</body>
+</html>

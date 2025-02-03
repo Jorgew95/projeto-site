@@ -431,6 +431,35 @@ iframe {
 }
 
 
+
+.seasons {
+    margin-top: 20px;
+}
+
+.season {
+    margin-bottom: 15px;
+}
+
+.episodes {
+    list-style-type: none;
+    padding: 0;
+}
+
+.episodes li {
+    margin: 5px 0;
+}
+
+.videoLink {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.videoLink:hover {
+    text-decoration: underline;
+}
+
+
+
 /* configurações para telas menores */
 
 @media (max-width: 465px){
