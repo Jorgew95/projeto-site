@@ -11,80 +11,14 @@
     <script src="scripts.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
             text-align: center;
         }
-
-        .video-list {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .video-list a {
-            display: block;
-            margin: 10px 0;
-            font-size: 18px;
-            color: blue;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        #videoContainer {
-            display: none;
-            margin-top: 20px;
-        }
-
-        #content {
-            transition: opacity 0.5s ease;
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        iframe {
-            width: 90%;
-            max-width: 920px;
-            height: 520px;
-            border: none;
-        }
-
-        /* Ajusta o tamanho do vídeo para telas menores */
-        @media screen and (max-width: 768px) {
-            iframe {
-                width: 95%;
-                height: 300px; /* Reduz o tamanho do vídeo em celulares */
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            iframe {
-                width: 100%;
-                height: 250px; /* Torna o vídeo ainda menor para telas muito pequenas */
-            }
-        }
-
-        #closeVideo {
-            margin-top: 15px;
-            padding: 10px 15px;
-            font-size: 16px;
-            background-color: red;
-            color: white;
-            border: none;
-            cursor: pointer;
-            display: block; /* Garante que o botão apareça */
-            margin: 20px auto;
-            border-radius: 5px;
-        }
-
-        #closeVideo:hover {
-            background-color: darkred;
-        }
+    
     </style>
 </head>
 <body>
     
-    <header>
+    <header class="fixo">
         <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
         <div class="menu">
             <button class="menu-button" onclick="toggleMenu()">
@@ -124,34 +58,35 @@
 
     <div id="videoContainer">
         <iframe id="videoFrame" src="" allowfullscreen></iframe>
-        <button id="closeVideo">Fechar Vídeo</button>
+        <button id="closeVideo">X</button>
     </div>
 
-    <footer id="footer">
-        <p>&copy; 2025 Movie Search. All rights reserved.</p>
-    </footer>
-
     <script>
-        /* função do video */
+       /* função do video */
+document.querySelectorAll(".videoLink").forEach(link => {
+    link.addEventListener("click", function(event) {
+        event.preventDefault(); 
 
-        document.querySelectorAll(".videoLink").forEach(link => {
-            link.addEventListener("click", function(event) {
-                event.preventDefault(); 
+        let videoSrc = this.getAttribute("data-src"); 
+        document.getElementById("videoFrame").src = videoSrc; 
 
-                let videoSrc = this.getAttribute("data-src"); 
-                document.getElementById("videoFrame").src = videoSrc; 
+        document.getElementById("content").classList.add("hidden"); 
+        document.getElementById("videoContainer").style.display = "block"; 
 
-                document.getElementById("content").classList.add("hidden"); 
-                document.getElementById("videoContainer").style.display = "block"; 
-            });
-        });
+        // Esconde o header quando o vídeo for aberto
+        document.querySelector('header').style.display = 'none';
+    });
+});
 
-        document.getElementById("closeVideo").addEventListener("click", function() {
-            document.getElementById("videoFrame").src = ""; 
+document.getElementById("closeVideo").addEventListener("click", function() {
+    document.getElementById("videoFrame").src = ""; 
 
-            document.getElementById("videoContainer").style.display = "none"; 
-            document.getElementById("content").classList.remove("hidden"); 
-        });
+    document.getElementById("videoContainer").style.display = "none"; 
+    document.getElementById("content").classList.remove("hidden"); 
+
+    // Restaura o header quando o vídeo for fechado
+    document.querySelector('header').style.display = 'flex';
+});
 
         /* função do menu*/
 
@@ -159,7 +94,7 @@
             document.querySelector('.menu').classList.toggle('open');
         }
     </script>
-    </script>
+
 
 </body>
 </html>
