@@ -8,12 +8,27 @@
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <header class="modelo">
-        <a href="animes_e_desenhos.html">Voltar</a>
-        <h1>Naruto Clássico</h1>
+    <header>
+        <h1 class="name-logo"><a class="logo" href="animes_e_desenhos.html">Links</a></h1>
+        <input class="pesquisa" id="pesquisa" placeholder="Pesquise aqui...">
+        <div class="menu">
+            <button class="menu-button" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <ul class="menu-options">
+                <li><a href="teste2.html">TESTE</a></li>
+                <li><a href="series.html">SÉRIES</a></li>
+                <li><a href="filmes.html">FILMES</a></li>
+            </ul>
+        </div>
     </header>
     <main>
         <ul class="site-list">
+            <h1>Naruto Clássico</h1>
+            <section class="borderline"></section>
+            <br>
         
         <li>
             <a href="https://drive.google.com/drive/folders/1t-xpcVR1vrKlcvfaDVMN6OO4S1pHQ--p" target="_blank">Naruto Clássico - 1ª Temporada</a>
@@ -44,5 +59,11 @@
         </li>
         </ul>
     </main>
+    <script src="scripts.js"></script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

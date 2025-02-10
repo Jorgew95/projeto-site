@@ -7,18 +7,38 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
 </head>
-<body>
-    <header class="modelo">
-        <a href="animes_e_desenhos.html" aria-label="Voltar uma página">Voltar</a>
-        <h1>Naruto Shippuden</h1>
-    </header>
+<header>
+    <h1 class="name-logo"><a class="logo" href="animes_e_desenhos.html">Links</a></h1>
+    <input class="pesquisa" id="pesquisa" placeholder="Pesquise aqui...">
+    <div class="menu">
+        <button class="menu-button" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <ul class="menu-options">
+            <li><a href="animes_e_desenhos.html">Animes e Desenhos</a></li>
+            <li><a href="series.html">Séries</a></li>
+            <li><a href="teste2.html">Teste Filme</a></li>
+        </ul>
+    </div>
+</header>
     <main>
     <ul class="site-list">
+        <h1>Naruto Shippuden</h1>
+            <section class="borderline"></section>
+            <br>
+
         <li><a href="https://drive.google.com/drive/u/0/folders/1bqpFOCbGyNi81vsl1uTJaHPYHScP3oAd" target="_blank">Naruto Shippuden - 1ª Temporada</a>
         <li><a href="https://drive.google.com/drive/u/0/folders/1qBr4EltnF9ZQljIEBlKKw8r12nz3bL5N" target="_blank">Naruto Shippuden - 2ª Temporada</a>
         <li><a href="https://drive.google.com/drive/u/0/folders/14jnqf957bXSKOEQpqZiFueFYAqw5aQbq" target="_blank">Naruto Shippuden - 3ª Temporada</a>
         <li><a href="https://drive.google.com/drive/folders/1EvfTIgd7hLNxzl4heBSuB2jDpnSLn5Jh" target="_blank">Naruto Shippuden - 4ª Temporada</a>
     </ul>
     </main>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.menu').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>

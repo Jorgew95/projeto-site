@@ -16,7 +16,7 @@ body{
 
     overflow-x: hidden;
 
-    color: white;
+    color: rgb(248, 245, 245);
 
     
 
@@ -100,12 +100,14 @@ header h1{
     color: #e61717;
 
     text-align: center;
+
+    
 }
 
 a{
     text-decoration: none;
 
-    color: rgb(253, 253, 253);
+    color: rgb(243, 239, 239);
 
     text-align: center;
 }
@@ -289,17 +291,19 @@ ul li a:hover{
 }
 
 .site-list li {
-    background-color: #fff;
+    background-color: #161515;
     border-radius: 6px;
     margin: 10px 0;
     padding: 10px;
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
+
+
 }
 
 .site-list li:hover {
-    background-color: #e0e0e0;
+    background-color: #d32121;
 }
 
 .site-list li span {
@@ -309,14 +313,15 @@ ul li a:hover{
 }
 
 .site-list li a {
-    color: #e7eaec;
+    color: #e9e3e3;
     text-decoration: none;
     font-size: 14px;
     transition: color 0.3s ease;
 }
 
+
 .site-list li a:hover {
-    color: #ecf0f3;
+    color: #abafb3;
 }
 
 /* layout do menu */
