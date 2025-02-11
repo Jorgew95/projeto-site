@@ -33,11 +33,10 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     position: fixed;
     top: 0;
-
     width: 100%;
+    border-bottom: #e61717 solid 1px;
 }
 
 .fixo{

@@ -23,13 +23,14 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            padding: 10px 20px;
+            background-color: rgb(0, 0, 0);
+            padding: 5 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            border-bottom: 2px solid #ff0000;
+            border-bottom: 1px solid #ff0000;
+
         }
 
         header h1{
@@ -119,14 +120,14 @@
 
         /* Hero Section */
         .hero {
-            background: url('') no-repeat center center/cover;
+            background: url('imagens/1917.webp') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: #ffffff;
-            margin-top: 60px; /* Espaço para o header fixo */
+            margin-top: 64px; /* Espaço para o header fixo */
         }
 
         .hero h2 {
@@ -142,7 +143,7 @@
         }
 
         .content h3 {
-            font-size: 1.5em;
+            font-size: 2em;
             color: #ff0000;
             margin-bottom: 20px;
             font-family: 'Bebas Neue', sans-serif;
@@ -151,11 +152,18 @@
         /* Grid de Conteúdos */
         .grid {
             display: flex;
-            overflow-x: auto;
+            overflow: hidden; /* Esconde o overflow para evitar barras de rolagem */
             gap: 10px;
             padding-bottom: 20px;
-            scroll-behavior: smooth;
-            cursor: grab;
+            position: relative;
+            width: 100%;
+            margin-inline: 10px;
+
+        }
+
+
+        .grid::-webkit-scrollbar {
+            display: none; /* Para Chrome, Safari e Opera */
         }
 
         .grid:active {
@@ -164,8 +172,8 @@
 
         .grid-container {
             display: flex;
-            gap: 10px;
-            animation: scroll 20s linear infinite;
+            gap: 5px;
+            animation: scroll 25s linear infinite; /* Animação de rolagem */
         }
 
         .grid:hover .grid-container {
@@ -197,13 +205,13 @@
             text-align: center;
         }
 
-        /* Animação de rolagem */
-        @keyframes scroll {
+         /* Animação de rolagem */
+         @keyframes scroll {
             0% {
                 transform: translateX(0);
             }
             100% {
-                transform: translateX(-50%);
+                transform: translateX(-50%); /* Move o conteúdo para a esquerda */
             }
         }
 
@@ -249,18 +257,23 @@
     <section class="hero">
         <h2>Assista a séries, filmes e animes ilimitados</h2>
     </section>
+    
     <section class="content">
-        <h3>Últimos Filmes Adicionados</h3>
-        <div class="grid" id="latest-movies">
-            <!-- Os filmes serão carregados aqui via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Seção de Destaques -->
-    <section class="content">
-        <h3>Destaques da Semana</h3>
+        <a href="series.html"><h3>Ver todas as SÉRIES</h3></a>
         <div class="grid">
             <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
                 <div class="grid-item">
                     <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
                     <h4>Ruptura</h4>
@@ -291,6 +304,18 @@
                     <h4>Ruptura</h4>
                 </div>
                 <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
                     <img src="https://via.placeholder.com/200x300" alt="Filme 1">
                     <h4>Filme 1</h4>
                 </div>
@@ -312,7 +337,91 @@
                 </div>
             </div>
         </div>
+       
     </section>
+    <section class="content">
+        <h3>Filmes</h3>
+        <div class="grid">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
+                <!-- Repetir os itens para criar um efeito contínuo -->
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
+            </div>
+        </div>
+       
+    </section>
+
+   
 
     <!-- Footer -->
     <footer>
