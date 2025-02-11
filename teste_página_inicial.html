@@ -139,16 +139,44 @@
 
         /* Seção de Destaques */
         .content {
+            position: relative;
             padding: 20px;
         }
 
         .content h3 {
-            font-size: 2em;
+            font-size: 1.5em;
             color: #ff0000;
             margin-bottom: 20px;
             font-family: 'Bebas Neue', sans-serif;
+            display: inline-block; /* Permite que o h3 e o span fiquem na mesma linha */
+            
         }
 
+        /* Estilos para a mensagem "Ver tudo >" */
+        .ver-tudo {
+            opacity: 0; /* Esconde inicialmente */
+            visibility: hidden;
+            font-size: 0.8em;
+            color: #f00505;
+            margin-left: 10px;
+            transition: opacity 0.3s, visibility 0.3s;
+            cursor: pointer;
+            border: none;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        /* Mostra a mensagem ao passar o mouse sobre a seção de Destaques */
+        .content:hover .ver-tudo {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Efeito de hover no texto "Ver tudo >" */
+        .ver-tudo:hover {
+            color: #7e7a7a;
+            border: none;
+            
+        }
         /* Grid de Conteúdos */
         .grid {
             display: flex;
@@ -259,7 +287,8 @@
     </section>
     
     <section class="content">
-        <a href="series.html"><h3>Ver todas as SÉRIES</h3></a>
+        <h3>Séries</h3>
+        <a href="series.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo ></span></a>
         <div class="grid">
             <div class="grid-container">
                 <div class="grid-item">
