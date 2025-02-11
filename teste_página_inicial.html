@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineAnime - Séries, Filmes e Animes</title>
+    <style>
+        @charset "UTF-8";
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+        /* Reset básico */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #141414;
+            color: #ffffff;
+        }
+
+        /* Header fixo */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        header h1{
+            color: rgb(241, 12, 12);
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 10px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }   
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 25px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+            
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000;
+        }
+
+        /* Ícone do Menu Hamburguer (para mobile) */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            width: 25px;
+            height: 3px;
+            background-color: #ec1313;
+            margin: 4px 0;
+            transition: background-color 0.3s;
+            margin-right: 40px;
+        }
+
+        .menu-icon:hover span {
+            background-color: #ff0000;
+        }
+
+        /* Estilos para telas menores (responsivo) */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: rgba(0, 0, 0, 0.9);
+                border: 1px solid #ff0000;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #ffffff;
+            margin-top: 60px; /* Espaço para o header fixo */
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Seção de Destaques */
+        .content {
+            padding: 20px;
+        }
+
+        .content h3 {
+            font-size: 1.5em;
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        /* Grid de Conteúdos */
+        .grid {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding-bottom: 20px;
+            scroll-behavior: smooth;
+            cursor: grab;
+        }
+
+        .grid:active {
+            cursor: grabbing;
+        }
+
+        .grid-container {
+            display: flex;
+            gap: 10px;
+            animation: scroll 20s linear infinite;
+        }
+
+        .grid:hover .grid-container {
+            animation-play-state: paused;
+        }
+
+        .grid-item {
+            flex: 0 0 auto;
+            width: 200px;
+            background-color: #333333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .grid-item h4 {
+            font-size: 1em;
+            margin: 10px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* Animação de rolagem */
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ff0000;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Fixo com Menu -->
+    <header>
+        <h1>Links</h1>
+        <nav>
+            <!-- Ícone do Menu Hamburguer (para mobile) -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Menu de Navegação -->
+            <ul id="nav-menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Animes</a></li>
+                <li><a href="#">Minha Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Assista a séries, filmes e animes ilimitados</h2>
+    </section>
+    <section class="content">
+        <h3>Últimos Filmes Adicionados</h3>
+        <div class="grid" id="latest-movies">
+            <!-- Os filmes serão carregados aqui via JavaScript -->
+        </div>
+    </section>
+
+    <!-- Seção de Destaques -->
+    <section class="content">
+        <h3>Destaques da Semana</h3>
+        <div class="grid">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
+                <!-- Repetir os itens para criar um efeito contínuo -->
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 CineAnime. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para alternar o menu em dispositivos móveis
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // Adiciona funcionalidade de rolagem manual com o mouse
+        const grid = document.querySelector('.grid');
+        let isDragging = false;
+        let startX, scrollLeft;
+
+        grid.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - grid.offsetLeft;
+            scrollLeft = grid.scrollLeft;
+            grid.style.cursor = 'grabbing';
+        });
+
+        grid.addEventListener('mouseleave', () => {
+            isDragging = false;
+            grid.style.cursor = 'grab';
+        });
+
+        grid.addEventListener('mouseup', () => {
+            isDragging = false;
+            grid.style.cursor = 'grab';
+        });
+
+        grid.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - grid.offsetLeft;
+            const walk = (x - startX) * 2; // Ajuste a velocidade da rolagem
+            grid.scrollLeft = scrollLeft - walk;
+        });
+
+        // scripts.js (ou no final do arquivo index.html)
+document.addEventListener('DOMContentLoaded', function () {
+    // Recupera a lista de filmes do localStorage
+    const movies = JSON.parse(localStorage.getItem('movies')) || [];
+
+    // Ordena os filmes pelo timestamp (do mais recente para o mais antigo)
+    movies.sort((a, b) => b.timestamp - a.timestamp);
+
+    // Limita a exibição aos últimos 6 filmes
+    const latestMovies = movies.slice(0, 6);
+
+    // Seleciona o container onde os filmes serão exibidos
+    const latestMoviesContainer = document.getElementById('latest-movies');
+
+    // Limpa o conteúdo atual
+    latestMoviesContainer.innerHTML = '';
+
+    // Adiciona cada filme ao container
+    latestMovies.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('space');
+        movieElement.innerHTML = `
+            <a href="${movie.link}" target="_blank">
+                <img src="${movie.image}" width="210" height="312" alt="${movie.name}">
+                <p>${movie.name}</p>
+            </a>
+        `;
+        latestMoviesContainer.appendChild(movieElement);
+    });
+});
+    </script>
+</body>
+</html>
