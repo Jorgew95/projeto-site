@@ -137,7 +137,7 @@
             border-radius: 10px;
         }
 
-        /* Seção de Destaques */
+        /* Estilos para a seção de Destaques da Semana */
         .content {
             position: relative;
             padding: 20px;
@@ -149,20 +149,25 @@
             margin-bottom: 20px;
             font-family: 'Bebas Neue', sans-serif;
             display: inline-block; /* Permite que o h3 e o span fiquem na mesma linha */
-            
         }
 
         /* Estilos para a mensagem "Ver tudo >" */
         .ver-tudo {
             opacity: 0; /* Esconde inicialmente */
             visibility: hidden;
-            font-size: 0.8em;
-            color: #f00505;
-            margin-left: 10px;
-            transition: opacity 0.3s, visibility 0.3s;
-            cursor: pointer;
-            border: none;
+            font-size: 1em;
             font-family: 'Bebas Neue', sans-serif;
+            color: #eb0f0f;
+            margin-left: 10px;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px; /* Espaço entre o texto e o ícone */
+            padding: 5px 10px;
+            background-color: rgba(12, 12, 12, 0.877); /* Fundo semi-transparente */
+            border-radius: 5px; /* Bordas arredondadas */
+            border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
         }
 
         /* Mostra a mensagem ao passar o mouse sobre a seção de Destaques */
@@ -173,10 +178,22 @@
 
         /* Efeito de hover no texto "Ver tudo >" */
         .ver-tudo:hover {
-            color: #7e7a7a;
-            border: none;
-            
+            color: #ff0000;
+            background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao passar o mouse */
+            border-color: #ff0000; /* Borda vermelha ao passar o mouse */
+            transform: translateX(5px); /* Movimento suave para a direita */
         }
+
+        /* Estilo do ícone de seta */
+        .ver-tudo i {
+            font-size: 0.8em;
+            transition: transform 0.3s;
+        }
+
+        .ver-tudo:hover i {
+            transform: translateX(3px); /* Movimento suave da seta ao passar o mouse */
+        }
+
         /* Grid de Conteúdos */
         .grid {
             display: flex;
@@ -200,7 +217,7 @@
 
         .grid-container {
             display: flex;
-            gap: 5px;
+            gap: 10px;
             animation: scroll 25s linear infinite; /* Animação de rolagem */
         }
 
@@ -288,7 +305,7 @@
     
     <section class="content">
         <h3>Séries</h3>
-        <a href="series.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo ></span></a>
+        <a href="series.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
         <div class="grid">
             <div class="grid-container">
                 <div class="grid-item">
@@ -370,6 +387,7 @@
     </section>
     <section class="content">
         <h3>Filmes</h3>
+        <a href="filmes.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
         <div class="grid">
             <div class="grid-container">
                 <div class="grid-item">
