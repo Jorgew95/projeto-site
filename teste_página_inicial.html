@@ -4,276 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CineAnime - Séries, Filmes e Animes</title>
-    <style>
-        @charset "UTF-8";
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
-
-        /* Reset básico */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #141414;
-            color: #ffffff;
-        }
-
-        /* Header fixo */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgb(0, 0, 0);
-            padding: 5 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            border-bottom: 1px solid #ff0000;
-
-        }
-
-        header h1{
-            color: rgb(241, 12, 12);
-            font-family: 'Bebas Neue', sans-serif;
-            margin: 10px;
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }   
-
-        /* Menu de Navegação */
-        nav {
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            margin-right: 25px;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-            
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ff0000;
-        }
-
-        /* Ícone do Menu Hamburguer (para mobile) */
-        .menu-icon {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-icon span {
-            width: 25px;
-            height: 3px;
-            background-color: #ec1313;
-            margin: 4px 0;
-            transition: background-color 0.3s;
-            margin-right: 40px;
-        }
-
-        .menu-icon:hover span {
-            background-color: #ff0000;
-        }
-
-        /* Estilos para telas menores (responsivo) */
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: rgba(0, 0, 0, 0.9);
-                border: 1px solid #ff0000;
-                border-radius: 5px;
-                padding: 10px;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            nav ul li {
-                margin: 10px 0;
-            }
-
-            .menu-icon {
-                display: flex;
-            }
-        }
-
-        /* Hero Section */
-        .hero {
-            background: url('imagens/1917.webp') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ffffff;
-            margin-top: 64px; /* Espaço para o header fixo */
-        }
-
-        .hero h2 {
-            font-size: 3em;
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        /* Estilos para a seção de Destaques da Semana */
-        .content {
-            position: relative;
-            padding: 20px;
-        }
-
-        .content h3 {
-            font-size: 1.5em;
-            color: #ff0000;
-            margin-bottom: 20px;
-            font-family: 'Bebas Neue', sans-serif;
-            display: inline-block; /* Permite que o h3 e o span fiquem na mesma linha */
-        }
-
-        /* Estilos para a mensagem "Ver tudo >" */
-        .ver-tudo {
-            opacity: 0; /* Esconde inicialmente */
-            visibility: hidden;
-            font-size: 1em;
-            font-family: 'Bebas Neue', sans-serif;
-            color: #eb0f0f;
-            margin-left: 10px;
-            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px; /* Espaço entre o texto e o ícone */
-            padding: 5px 10px;
-            background-color: rgba(12, 12, 12, 0.877); /* Fundo semi-transparente */
-            border-radius: 5px; /* Bordas arredondadas */
-            border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
-        }
-
-        /* Mostra a mensagem ao passar o mouse sobre a seção de Destaques */
-        .content:hover .ver-tudo {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Efeito de hover no texto "Ver tudo >" */
-        .ver-tudo:hover {
-            color: #ff0000;
-            background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao passar o mouse */
-            border-color: #ff0000; /* Borda vermelha ao passar o mouse */
-            transform: translateX(5px); /* Movimento suave para a direita */
-        }
-
-        /* Estilo do ícone de seta */
-        .ver-tudo i {
-            font-size: 0.8em;
-            transition: transform 0.3s;
-        }
-
-        .ver-tudo:hover i {
-            transform: translateX(3px); /* Movimento suave da seta ao passar o mouse */
-        }
-
-        /* Grid de Conteúdos */
-        .grid {
-            display: flex;
-            overflow: hidden; /* Esconde o overflow para evitar barras de rolagem */
-            gap: 10px;
-            padding-bottom: 20px;
-            position: relative;
-            width: 100%;
-            margin-inline: 10px;
-
-        }
-
-
-        .grid::-webkit-scrollbar {
-            display: none; /* Para Chrome, Safari e Opera */
-        }
-
-        .grid:active {
-            cursor: grabbing;
-        }
-
-        .grid-container {
-            display: flex;
-            gap: 10px;
-            animation: scroll 25s linear infinite; /* Animação de rolagem */
-        }
-
-        .grid:hover .grid-container {
-            animation-play-state: paused;
-        }
-
-        .grid-item {
-            flex: 0 0 auto;
-            width: 200px;
-            background-color: #333333;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.05);
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: auto;
-        }
-
-        .grid-item h4 {
-            font-size: 1em;
-            margin: 10px;
-            color: #ffffff;
-            text-align: center;
-        }
-
-         /* Animação de rolagem */
-         @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%); /* Move o conteúdo para a esquerda */
-            }
-        }
-
-        /* Footer */
-        footer {
-            background-color: #000000;
-            padding: 20px;
-            text-align: center;
-            border-top: 2px solid #ff0000;
-        }
-
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
-            color: #ffffff;
-        }
-    </style>
+    <link rel="stylesheet" href="página_inicial.css">
 </head>
 <body>
 
@@ -290,200 +21,277 @@
             <!-- Menu de Navegação -->
             <ul id="nav-menu">
                 <li><a href="#">Início</a></li>
-                <li><a href="#">Séries</a></li>
-                <li><a href="#">Filmes</a></li>
-                <li><a href="#">Animes</a></li>
+                <li><a href="series.html">Séries</a></li>
+                <li><a href="filmes.html">Filmes</a></li>
+                <li><a href="animes_e_desenhos.html">Animes e Desenhos</a></li>
                 <li><a href="#">Minha Lista</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h2>Assista a séries, filmes e animes ilimitados</h2>
-    </section>
-    
-    <section class="content">
-        <h3>Séries</h3>
-        <a href="series.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
-        <div class="grid">
-            <div class="grid-container">
-                
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="ruptura"></a>
+    <!-- Nova Seção Dinâmica -->
+    <section class="dynamic-section">
+        <h2>Últimos Lançamentos</h2>
+        <div class="dynamic-carousel">
+            <div class="dynamic-carousel-container">
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
                     <h4>Ruptura</h4>
                 </div>
 
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" alt="secret level"></a>
-                    <h4>Secret level</h4>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" alt="Secret Level"></a>
+                    <h4>Secret Level</h4>
                 </div>
 
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" alt="senna"></a>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" alt="Senna"></a>
                     <h4>Senna</h4>
                 </div>
 
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" alt="chernobyl"></a>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" alt="Chernobyl"></a>
                     <h4>Chernobyl</h4>
                 </div>
-                <div class="grid-item">
-                   <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW"> <img src="imagens/greys_anatomy.webp" alt="gray's anatomy"></a>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW" target="_blank"><img src="imagens/greys_anatomy.webp" alt="Grey's Anatomy"></a>
                     <h4>Grey's Anatomy</h4>
                 </div>
 
-                <div class="grid-item">
-                   <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83"> <img src="imagens/avatar_serie.webp" alt="avatar o ultimo mestre do ar(2024)"></a>
-                    <h4>Avatar o Último Mestre Do Ar(2024)</h4>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83" target="_blank"><img src="imagens/avatar_serie.webp" alt="Avatar: O Último Mestre do Ar"></a>
+                    <h4>Avatar: O Último Mestre do Ar</h4>
                 </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/u/2/folders/1OIcIpBRoqDL1he_KOWIu5LZ5Mc6jZpLb"> <img src="imagens/dexter.webp" alt="dexter(2006)"></a>
-                     <h4>Dexter(2006)</h4>
-                 </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/1tO_njbDSS5ClI3GtzA11DokgDpCFgFxa?hl=pt-br"> <img src="imagens/amor_vida.webp" alt="amor da minha vida"></a>
-                     <h4>Amor da minnha vida</h4>
-                 </div>
 
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK"> <img src="imagens/pinguim.webp" alt="pinguim(2024)"></a>
-                     <h4>Pinguim(2024)</h4>
-                 </div>
-               
-                <!-- Repetir os itens para criar um efeito contínuo -->
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="ruptura"></a>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/u/2/folders/1OIcIpBRoqDL1he_KOWIu5LZ5Mc6jZpLb" target="_blank"><img src="imagens/dexter.webp" alt="Dexter"></a>
+                    <h4>Dexter</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1tO_njbDSS5ClI3GtzA11DokgDpCFgFxa?hl=pt-br" target="_blank"><img src="imagens/amor_vida.webp" alt="Amor da Minha Vida"></a>
+                    <h4>Amor da Minha Vida</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+                
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
+                </div>
+
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
                     <h4>Ruptura</h4>
                 </div>
 
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" alt="secret level"></a>
-                    <h4>Secret level</h4>
-                </div>
-
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" alt="senna"></a>
-                    <h4>Senna</h4>
-                </div>
-
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" alt="chernobyl"></a>
-                    <h4>Chernobyl</h4>
-                </div>
-
-                <div class="grid-item">
-                   <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW"> <img src="imagens/greys_anatomy.webp" alt="gray's anatomy"></a>
-                    <h4>Grey's Anatomy</h4>
-                </div>
-
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83"> <img src="imagens/avatar_serie.webp" alt="avatar o ultimo mestre do ar(2024)"></a>
-                     <h4>Avatar o Último Mestre Do Ar(2024)</h4>
-                 </div>
-
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/u/2/folders/1OIcIpBRoqDL1he_KOWIu5LZ5Mc6jZpLb"> <img src="imagens/dexter.webp" alt="dexter(2006)"></a>
-                     <h4>Dexter(2006)</h4>
-                 </div>
-
-                 <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/1tO_njbDSS5ClI3GtzA11DokgDpCFgFxa?hl=pt-br"> <img src="imagens/amor_vida.webp" alt="amor da minha vida"></a>
-                     <h4>Amor da minnha vida</h4>
-                 </div>
-
-                 <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK"> <img src="imagens/pinguim.webp" alt="pinguim(2024)"></a>
-                     <h4>Pinguim(2024)</h4>
-                 </div>
-                
             </div>
         </div>
-       
     </section>
-    <section class="content">
+    <section class="content" id="f">
         <h3>Filmes</h3>
         <a href="filmes.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
-        <div class="grid">
-            <div class="grid-container">
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
-                    <h4>Filme 1</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
-                    <h4>Anime 1</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
-                    <h4>Série 2</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
-                    <h4>Filme 2</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
-                    <h4>Anime 2</h4>
-                </div>
-                <!-- Repetir os itens para criar um efeito contínuo -->
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
-                    <h4>Ruptura</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
-                    <h4>Filme 1</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
-                    <h4>Anime 1</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
-                    <h4>Série 2</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
-                    <h4>Filme 2</h4>
-                </div>
-                <div class="grid-item">
-                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
-                    <h4>Anime 2</h4>
+        <div class="grid-container">
+            <button class="scroll-button left" onclick="scrollGrid('left', 'filmes')">&#10094;</button>
+            <div class="grid" id="filmes">
+                <div class="grid-inner">
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+                
+
                 </div>
             </div>
+            <button class="scroll-button right" onclick="scrollGrid('right', 'filmes')">&#10095;</button>
+        </div>
+    </section>
+
+    <section class="content" id="se">
+        <h3>SÉRIES</h3>
+        <a href="series.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
+        <div class="grid-container">
+            <button class="scroll-button left" onclick="scrollGrid('left', 'series')">&#10094;</button>
+            <div class="grid" id="series">
+                <div class="grid-inner">
+                    
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="ruptura"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" alt="secret level"></a>
+                        <h4>Secret level</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" alt="senna"></a>
+                        <h4>Senna</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" alt="chernobyl"></a>
+                        <h4>Chernobyl</h4>
+                    </div>
+
+                    <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW"> <img src="imagens/greys_anatomy.webp" alt="gray's anatomy"></a>
+                        <h4>Grey's Anatomy</h4>
+                    </div>
+
+                    <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83"> <img src="imagens/avatar_serie.webp" alt="avatar o ultimo mestre do ar(2024)"></a>
+                        <h4>Avatar o Último Mestre Do Ar(2024)</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/u/2/folders/1OIcIpBRoqDL1he_KOWIu5LZ5Mc6jZpLb"> <img src="imagens/dexter.webp" alt="dexter(2006)"></a>
+                        <h4>Dexter(2006)</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/1tO_njbDSS5ClI3GtzA11DokgDpCFgFxa?hl=pt-br"> <img src="imagens/amor_vida.webp" alt="amor da minha vida"></a>
+                        <h4>Amor da minnha vida</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK"> <img src="imagens/pinguim.webp" alt="pinguim(2024)"></a>
+                        <h4>Pinguim(2024)</h4>
+                    </div>
+
+                 
+                </div>
+            </div>
+            <button class="scroll-button right" onclick="scrollGrid('right', 'series')">&#10095;</button>
+        </div>
+    </section>
+    
+    <section class="content" id="a">
+        <h3>Animes e Desenhos</h3>
+        <a href="animes_e_desenhos.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
+        <div class="grid-container">
+            <button class="scroll-button left" onclick="scrollGrid('left', 'animes')">&#10094;</button>
+            <div class="grid" id="animes">
+                <div class="grid-inner">
+                
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                        <h4>Ruptura</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                        <h4>Filme 1</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                        <h4>Anime 1</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                        <h4>Série 2</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                        <h4>Filme 2</h4>
+                    </div>
+
+                    <div class="grid-item">
+                        <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                        <h4>Anime 2</h4>
+                    </div>
+                
+                </div>
+            </div>
+            <button class="scroll-button right" onclick="scrollGrid('right', 'animes')">&#10095;</button>
         </div>
        
     </section>
-
+    
    
 
     <!-- Footer -->
@@ -498,66 +306,16 @@
             navMenu.classList.toggle('active');
         }
 
-        // Adiciona funcionalidade de rolagem manual com o mouse
-        const grid = document.querySelector('.grid');
-        let isDragging = false;
-        let startX, scrollLeft;
+        function scrollGrid(direction, gridId) {
+    const grid = document.getElementById(gridId);
+    const scrollAmount = 300; // Quantidade de rolagem por clique
 
-        grid.addEventListener('mousedown', (e) => {
-            isDragging = true;
-            startX = e.pageX - grid.offsetLeft;
-            scrollLeft = grid.scrollLeft;
-            grid.style.cursor = 'grabbing';
-        });
-
-        grid.addEventListener('mouseleave', () => {
-            isDragging = false;
-            grid.style.cursor = 'grab';
-        });
-
-        grid.addEventListener('mouseup', () => {
-            isDragging = false;
-            grid.style.cursor = 'grab';
-        });
-
-        grid.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            e.preventDefault();
-            const x = e.pageX - grid.offsetLeft;
-            const walk = (x - startX) * 2; // Ajuste a velocidade da rolagem
-            grid.scrollLeft = scrollLeft - walk;
-        });
-
-        // scripts.js (ou no final do arquivo index.html)
-document.addEventListener('DOMContentLoaded', function () {
-    // Recupera a lista de filmes do localStorage
-    const movies = JSON.parse(localStorage.getItem('movies')) || [];
-
-    // Ordena os filmes pelo timestamp (do mais recente para o mais antigo)
-    movies.sort((a, b) => b.timestamp - a.timestamp);
-
-    // Limita a exibição aos últimos 6 filmes
-    const latestMovies = movies.slice(0, 6);
-
-    // Seleciona o container onde os filmes serão exibidos
-    const latestMoviesContainer = document.getElementById('latest-movies');
-
-    // Limpa o conteúdo atual
-    latestMoviesContainer.innerHTML = '';
-
-    // Adiciona cada filme ao container
-    latestMovies.forEach(movie => {
-        const movieElement = document.createElement('div');
-        movieElement.classList.add('space');
-        movieElement.innerHTML = `
-            <a href="${movie.link}" target="_blank">
-                <img src="${movie.image}" width="210" height="312" alt="${movie.name}">
-                <p>${movie.name}</p>
-            </a>
-        `;
-        latestMoviesContainer.appendChild(movieElement);
-    });
-});
+    if (direction === 'left') {
+        grid.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    } else if (direction === 'right') {
+        grid.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+}
     </script>
 </body>
 </html>

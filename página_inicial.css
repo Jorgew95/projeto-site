@@ -1,0 +1,326 @@
+/* Arquivo de estilo da página inicial */
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+/* Reset básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+/* Header fixo */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    padding: 5 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    
+
+}
+
+header h1{
+    color: rgb(241, 12, 12);
+    font-family: 'Bebas Neue', sans-serif;
+    margin: 10px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}   
+  /* Menu de Navegação */
+  nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-right: 25px;
+}
+
+nav ul li {
+    margin: 0 15px;
+    
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff0000;
+}
+
+/* Ícone do Menu Hamburguer (para mobile) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 30px;
+    height: 4px;
+    background-color: #ec1313;
+    margin: 3px 0;
+    transition: background-color 0.3s;
+    margin-right: 20px;
+    border-radius: 2px;
+}
+
+.menu-icon:hover span {
+    background-color: #ff0000;
+}
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+}
+
+/* Estilos para a seção de Destaques da Semana */
+.content {
+    position: relative;
+    padding: 20px;
+}
+
+.content h3 {
+    font-size: 1.5em;
+    color: #ff0000;
+    margin-bottom: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    display: inline-block; /* Permite que o h3 e o span fiquem na mesma linha */
+    margin-top: 100px;
+}
+
+/* Estilos para a mensagem "Ver tudo >" */
+.ver-tudo {
+    opacity: 0; /* Esconde inicialmente */
+    visibility: hidden;
+    font-size: 1em;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #eb0f0f;
+    margin-left: 10px;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px; /* Espaço entre o texto e o ícone */
+    padding: 5px 10px;
+    background-color: rgba(12, 12, 12, 0.877); /* Fundo semi-transparente */
+    border-radius: 5px; /* Bordas arredondadas */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */
+}
+
+/* Mostra a mensagem ao passar o mouse sobre a seção de Destaques */
+.content:hover .ver-tudo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Efeito de hover no texto "Ver tudo >" */
+.ver-tudo:hover {
+    color: #ff0000;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo mais claro ao passar o mouse */
+    border-color: #ff0000; /* Borda vermelha ao passar o mouse */
+    transform: translateX(5px); /* Movimento suave para a direita */
+}
+
+/* Estilo do ícone de seta */
+.ver-tudo i {
+    font-size: 0.8em;
+    transition: transform 0.3s;
+}
+
+.ver-tudo:hover i {
+    transform: translateX(3px); /* Movimento suave da seta ao passar o mouse */
+}
+
+/* Grid de Conteúdos */
+
+.grid-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.scroll-button.left {
+    position: absolute;
+    left: 0;
+}
+
+.scroll-button.right {
+    position: absolute;
+    right: 0;
+}
+
+.grid {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+    position: relative;
+}
+
+.grid-inner {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.grid-item {
+    flex: 0 0 auto;
+    width: 200px;
+    background-color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+}
+
+.grid-item h4 {
+    font-size: 1em;
+    margin: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+    
+
+ /* Nova Seção Dinâmica */
+ .dynamic-section {
+    margin-top: 64px; /* Espaço para o header fixo */
+    padding: 20px;
+    background-color: #1c1c1c;
+    border-bottom: 2px solid #ff0000;
+}
+
+.dynamic-section h2 {
+    font-size: 2em;
+    color: #ff0000;
+    margin-bottom: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.dynamic-carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 10px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.dynamic-carousel-container {
+    display: flex;
+    gap: 10px;
+    animation: scroll 25s linear infinite;
+}
+
+.dynamic-carousel:hover .dynamic-carousel-container {
+    animation-play-state: paused;
+}
+
+.dynamic-carousel-item {
+    flex: 0 0 auto;
+    width: 200px;
+    background-color: #333333;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.dynamic-carousel-item:hover {
+    transform: scale(1.05);
+}
+
+.dynamic-carousel-item img {
+    width: 100%;
+    height: auto;
+}
+
+.dynamic-carousel-item h4 {
+    font-size: 1em;
+    margin: 10px;
+    color: #ffffff;
+    text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #ff0000;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ffffff;
+}

@@ -1,114 +1,396 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Busque e explore uma lista de filmes como Inception, Avatar, Titanic e outros. Use nossa barra de pesquisa para encontrar rapidamente o que procura.">
-    <title>Séries Search</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="icon/favicon.png" type="image/x-icon">
-    <script src="scripts.js"></script>
-    <script src="ordem_alfabetica.js"></script>
+    <title>CineAnime - Séries, Filmes e Animes</title>
+    <style>
+        @charset "UTF-8";
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200&display=swap');
+
+        /* Reset básico */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #141414;
+            color: #ffffff;
+        }
+
+        /* Header fixo */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            padding: 5 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #ff0000;
+        }
+
+        header h1 {
+            color: rgb(241, 12, 12);
+            font-family: 'Bebas Neue', sans-serif;
+            margin: 10px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Menu de Navegação */
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            margin-right: 25px;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ff0000;
+        }
+
+        /* Ícone do Menu Hamburguer (para mobile) */
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-icon span {
+            width: 25px;
+            height: 3px;
+            background-color: #ec1313;
+            margin: 4px 0;
+            transition: background-color 0.3s;
+            margin-right: 40px;
+        }
+
+        .menu-icon:hover span {
+            background-color: #ff0000;
+        }
+
+        /* Estilos para telas menores (responsivo) */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                background-color: rgba(0, 0, 0, 0.9);
+                border: 1px solid #ff0000;
+                border-radius: 5px;
+                padding: 10px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .menu-icon {
+                display: flex;
+            }
+        }
+
+        /* Nova Seção Dinâmica */
+        .dynamic-section {
+            margin-top: 64px; /* Espaço para o header fixo */
+            padding: 20px;
+            background-color: #1c1c1c;
+            border-bottom: 2px solid #ff0000;
+        }
+
+        .dynamic-section h2 {
+            font-size: 2em;
+            color: #ff0000;
+            margin-bottom: 20px;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+
+        .dynamic-carousel {
+            display: flex;
+            overflow: hidden;
+            gap: 10px;
+            padding-bottom: 20px;
+            position: relative;
+            width: 100%;
+        }
+
+        .dynamic-carousel-container {
+            display: flex;
+            gap: 10px;
+            animation: scroll 25s linear infinite;
+        }
+
+        .dynamic-carousel:hover .dynamic-carousel-container {
+            animation-play-state: paused;
+        }
+
+        .dynamic-carousel-item {
+            flex: 0 0 auto;
+            width: 200px;
+            background-color: #333333;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .dynamic-carousel-item:hover {
+            transform: scale(1.05);
+        }
+
+        .dynamic-carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .dynamic-carousel-item h4 {
+            font-size: 1em;
+            margin: 10px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: #000000;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ff0000;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1 class="name-logo"><a class="logo" href="index.html">Links</a></h1>
-        <input class="pesquisa" id="pesquisa" placeholder="Pesquise aqui...">
-        <div class="menu">
-            <button class="menu-button" onclick="toggleMenu()">
-                <div></div>
-                <div></div>
-                <div></div>
-            </button>
-            <ul class="menu-options">
-                <li><a href="animes_e_desenhos.html">ANIMES E DESENHOS</li>
-                <li><a href="teste2.html">TESTE</a></li>
-                <li><a href="filmes.html">FILMES</a></li>
-            </ul>
-        </div>
-    </header>
-    <main>
-        
-            <h1>Séries</h1>
-            <section class="borderline"></section>
-            
 
-            <div class="series" id="seriesExample">
-                <h2>Ruptura</h2>
-                <div class="seasons">
-                    <!-- Temporada 1 -->
-                    <div class="season">
-                        <h3>Temporada 1</h3>
-                        <ul class="episodes">
-                            <li><a href="#" class="videoLink" data-src="https://drive.google.com/file/d/1on29YWIWxAtvuC7SlRGEkVwwJM7Hrljk/preview" width="640" height="480" allow="autoplay" width="640" height="480" allow="autoplay" data-season="1" data-episode="1">Episódio 1</a></li>
-                            <li><a href="#" class="videoLink" data-src="video2.mp4" data-season="1" data-episode="2">Episódio 2</a></li>
-                            <li><a href="#" class="videoLink" data-src="video3.mp4" data-season="1" data-episode="3">Episódio 3</a></li>
-                        </ul>
-                    </div>
-            
-                    <!-- Temporada 2 -->
-                    <div class="season">
-                        <h3>Temporada 2</h3>
-                        <ul class="episodes">
-                            <li><a href="#" class="videoLink" data-src="video4.mp4" data-season="2" data-episode="1">Episódio 1</a></li>
-                            <li><a href="#" class="videoLink" data-src="video5.mp4" data-season="2" data-episode="2">Episódio 2</a></li>
-                            <li><a href="#" class="videoLink" data-src="video6.mp4" data-season="2" data-episode="3">Episódio 3</a></li>
-                        </ul>
-                    </div>
+    <!-- Header Fixo com Menu -->
+    <header>
+        <h1>Links</h1>
+        <nav>
+            <!-- Ícone do Menu Hamburguer (para mobile) -->
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <!-- Menu de Navegação -->
+            <ul id="nav-menu">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Séries</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Animes</a></li>
+                <li><a href="#">Minha Lista</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Nova Seção Dinâmica -->
+    <section class="dynamic-section">
+        <h2>Últimos Lançamentos</h2>
+        <div class="dynamic-carousel">
+            <div class="dynamic-carousel-container">
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Ruptura"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/10HHDbUkk3FAcbLrBk2TZG711X3P2oNeP" target="_blank"><img src="imagens/nivel_secreto.webp" alt="Secret Level"></a>
+                    <h4>Secret Level</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/14YNLRUuwZE6lJ6cZzk7jvGYH_5WJLshR" target="_blank"><img src="imagens/senna.webp" alt="Senna"></a>
+                    <h4>Senna</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/u/0/folders/1gj9CfrevZE7kuOB49dXuIuyQVPASBmlk" target="_blank"><img src="imagens/chernobyl.webp" alt="Chernobyl"></a>
+                    <h4>Chernobyl</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1UpduGDBDHiCSVbqsNcu7_gjSQqgHxUMW" target="_blank"><img src="imagens/greys_anatomy.webp" alt="Grey's Anatomy"></a>
+                    <h4>Grey's Anatomy</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/11WrMkBV7tc66mXSH9Mx1H9ETcATw3E83" target="_blank"><img src="imagens/avatar_serie.webp" alt="Avatar: O Último Mestre do Ar"></a>
+                    <h4>Avatar: O Último Mestre do Ar</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/u/2/folders/1OIcIpBRoqDL1he_KOWIu5LZ5Mc6jZpLb" target="_blank"><img src="imagens/dexter.webp" alt="Dexter"></a>
+                    <h4>Dexter</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1tO_njbDSS5ClI3GtzA11DokgDpCFgFxa?hl=pt-br" target="_blank"><img src="imagens/amor_vida.webp" alt="Amor da Minha Vida"></a>
+                    <h4>Amor da Minha Vida</h4>
+                </div>
+                <div class="dynamic-carousel-item">
+                    <a href="https://drive.google.com/drive/folders/1M26yqFGclJ40cksbkhyKQ6U_jGIpZ-hK" target="_blank"><img src="imagens/pinguim.webp" alt="Pinguim"></a>
+                    <h4>Pinguim</h4>
                 </div>
             </div>
-            <div id="videoContainer" style="display: none;">
-                <button id="closeVideo">X</button>
-                <h2 id="videoTitle"></h2>
-                <iframe id="videoFrame" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Seção de Filmes -->
+    <section class="content">
+        <h3>Filmes</h3>
+        <a href="filmes.html"><span class="ver-tudo" onclick="redirecionarParaVerTudo()">Ver tudo →</span></a>
+        <div class="grid">
+            <div class="grid-container">
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
+                <!-- Repetir os itens para criar um efeito contínuo -->
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <a href="https://drive.google.com/drive/folders/143DMn4COkwM8pIzlU1CN_tCc-mRHXF2J" target="_blank"><img src="imagens/ruptura.webp" alt="Série 1"></a>
+                    <h4>Ruptura</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 1">
+                    <h4>Filme 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 1">
+                    <h4>Anime 1</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Série 2">
+                    <h4>Série 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Filme 2">
+                    <h4>Filme 2</h4>
+                </div>
+                <div class="grid-item">
+                    <img src="https://via.placeholder.com/200x300" alt="Anime 2">
+                    <h4>Anime 2</h4>
+                </div>
             </div>
-        
-    </main>
-    <footer id="footer">
-        <p>&copy; 2025 Movie Search. All rights reserved.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 CineAnime. Todos os direitos reservados.</p>
     </footer>
-    <!-- Mover o script para o final -->
-    <script src="scripts.js"></script>
+
     <script>
+        // Função para alternar o menu em dispositivos móveis
         function toggleMenu() {
-            document.querySelector('.menu').classList.toggle('open');
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
         }
-    </script>
-    <script>
-        document.querySelectorAll(".videoLink").forEach(link => {
-    link.addEventListener("click", function(event) {
-        event.preventDefault();
 
-        let videoSrc = this.getAttribute("data-src");  // Obtém o link do vídeo
-        let season = this.getAttribute("data-season"); // Obtém a temporada
-        let episode = this.getAttribute("data-episode"); // Obtém o episódio
+        // Adiciona funcionalidade de rolagem manual com o mouse
+        const grid = document.querySelector('.grid');
+        let isDragging = false;
+        let startX, scrollLeft;
 
-        // Atualiza o src do iframe de vídeo
-        document.getElementById("videoFrame").src = videoSrc;
+        grid.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX - grid.offsetLeft;
+            scrollLeft = grid.scrollLeft;
+            grid.style.cursor = 'grabbing';
+        });
 
-        // Atualiza o título da série, temporada e episódio
-        document.getElementById("videoTitle").innerText = `Temporada ${season} - Episódio ${episode}`;
+        grid.addEventListener('mouseleave', () => {
+            isDragging = false;
+            grid.style.cursor = 'grab';
+        });
 
-        // Exibe o container de vídeo e esconde o conteúdo da página
-        document.getElementById("videoContainer").style.display = "block";
-        document.getElementById("content").classList.add("hidden");
+        grid.addEventListener('mouseup', () => {
+            isDragging = false;
+            grid.style.cursor = 'grab';
+        });
 
-        // Esconde o header quando o vídeo for aberto
-        document.querySelector('header').style.display = 'none';
-    });
-});
-
-document.getElementById("closeVideo").addEventListener("click", function() {
-    // Limpa o conteúdo do vídeo
-    document.getElementById("videoFrame").src = "";
-
-    // Esconde o container de vídeo e restaura o conteúdo da página
-    document.getElementById("videoContainer").style.display = "none";
-    document.getElementById("content").classList.remove("hidden");
-
-    // Restaura o header quando o vídeo for fechado
-    document.querySelector('header').style.display = 'flex';
-});
+        grid.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - grid.offsetLeft;
+            const walk = (x - startX) * 2; // Ajuste a velocidade da rolagem
+            grid.scrollLeft = scrollLeft - walk;
+        });
     </script>
 </body>
 </html>

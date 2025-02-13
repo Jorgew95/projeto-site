@@ -9,17 +9,10 @@
 
 body{
     background-color: rgb(43, 43, 43);
-
     font-family: Arial, Helvetica, sans-serif;
-
     padding-top: 95px;
-
     overflow-x: hidden;
-
     color: rgb(248, 245, 245);
-
-    
-
     margin: 0;
 }
 
@@ -36,7 +29,7 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: #e61717 solid 1px;
+    
 }
 
 .fixo{
@@ -244,17 +237,18 @@ main h1{
 
 /*footer*/
 
+/* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
-    color: white;
+    background-color: #000000;
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
-    display: none; /* Inicialmente invisível */
-    
+    border-top: 2px solid #ff0000;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ffffff;
 }
 
 
