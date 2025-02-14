@@ -85,32 +85,7 @@ nav ul li a:hover {
     background-color: #ff0000;
 }
 
-/* Estilos para telas menores (responsivo) */
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: -20px;
-        background-color: rgba(0, 0, 0, 0.9);
-        border: 1px solid #ff0000;
-        border-radius: 5px;
-        padding: 10px;
-    }
 
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .menu-icon {
-        display: flex;
-    }
-}
 
 /* Estilos para a seção de Destaques da Semana */
 .content {
@@ -121,10 +96,10 @@ nav ul li a:hover {
 .content h3 {
     font-size: 1.5em;
     color: #ff0000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: 'Bebas Neue', sans-serif;
     display: inline-block; /* Permite que o h3 e o span fiquem na mesma linha */
-    margin-top: 100px;
+    margin-top: 20px;
 }
 
 /* Estilos para a mensagem "Ver tudo >" */
@@ -254,7 +229,7 @@ nav ul li a:hover {
 .dynamic-section h2 {
     font-size: 2em;
     color: #ff0000;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-family: 'Bebas Neue', sans-serif;
 }
 
@@ -323,4 +298,50 @@ footer p {
     margin: 0;
     font-size: 0.9em;
     color: #ffffff;
+}
+
+
+/* Estilos para telas menores (responsivo) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: -20px;
+        background-color: rgba(0, 0, 0, 0.9);
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: flex;
+    }
+    
+    header h1{
+        margin-left: 20px;
+        font-size: 25px;
+    }
+
+    .dynamic-section h2 {
+        font-size: 25px;
+    }
+
+    .content h3 {
+        font-size: 20px;
+    }
+
+    .grid-item {
+        width: 150px;
+    }
+    
 }
