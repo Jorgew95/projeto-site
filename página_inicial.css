@@ -220,7 +220,7 @@ nav ul li a:hover {
 
  /* Nova Seção Dinâmica */
  .dynamic-section {
-    margin-top: 64px; /* Espaço para o header fixo */
+    margin-top: 60px; /* Espaço para o header fixo */
     padding: 20px;
     background-color: #1c1c1c;
     border-bottom: 2px solid #ff0000;
@@ -344,4 +344,11 @@ footer p {
         width: 150px;
     }
     
+    .dynamic-carousel-item {
+        width: 150px;
+    }
+
+    .dynamic-section {
+        margin-top: 40px;
+    }
 }
