@@ -255,7 +255,7 @@ nav ul li a:hover {
 .dynamic-carousel-item {
     flex: 0 0 auto;
     width: 200px;
-    background-color: #333333;
+    border: white 1px solid;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
@@ -342,15 +342,24 @@ footer p {
     }
 
     .grid-item {
-        width: 100px;
+        width: 140px;
+        background-color: transparent;
+        border: white 1px solid;
+        gap: 10px;
+        text-align: justify;
     }
     
     .dynamic-carousel-item {
-        width: 120px;
-        text-align: right;
+        width: 140px;
+        text-align: justify;
     }
 
     .dynamic-section {
         margin-top: 40px;
+    }
+
+    .dynamic-carousel {
+        padding-bottom: 5px;
+        gap: 15px;
     }
 }
