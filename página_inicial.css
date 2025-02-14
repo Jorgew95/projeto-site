@@ -237,7 +237,7 @@ nav ul li a:hover {
     display: flex;
     overflow: hidden;
     gap: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     position: relative;
     width: 100%;
 }
@@ -259,6 +259,7 @@ nav ul li a:hover {
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
+    text-align: end;
 }
 
 .dynamic-carousel-item:hover {
@@ -272,7 +273,7 @@ nav ul li a:hover {
 
 .dynamic-carousel-item h4 {
     font-size: 1em;
-    margin: 10px;
+    margin: 5px;
     color: #ffffff;
     text-align: center;
 }
@@ -346,6 +347,7 @@ footer p {
     
     .dynamic-carousel-item {
         width: 120px;
+        text-align: right;
     }
 
     .dynamic-section {
