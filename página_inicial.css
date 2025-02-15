@@ -204,11 +204,12 @@ nav ul li a:hover {
 
 .grid-item {
     flex: 0 0 auto;
-    width: 200px;
+    width: 150px;
     background-color: #333333;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s;
+    border: white 1px solid;    
 }
 
 .grid-item:hover {
@@ -255,7 +256,7 @@ nav ul li a:hover {
 .dynamic-carousel-container {
     display: flex;
     gap: 10px;
-    animation: scroll 25s linear infinite;
+    animation: scroll 30s linear infinite;
 }
 
 .dynamic-carousel:hover .dynamic-carousel-container {
@@ -264,7 +265,7 @@ nav ul li a:hover {
 
 .dynamic-carousel-item {
     flex: 0 0 auto;
-    width: 200px;
+    width: 140px;
     border: white 1px solid;
     border-radius: 10px;
     overflow: hidden;
