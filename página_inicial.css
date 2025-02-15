@@ -27,6 +27,15 @@ header {
 
 }
 
+.ajuste{
+    
+    justify-content: center;
+    margin-right: 300px;
+    margin-left: 300px;
+    margin-top: 10px;
+    background-color: transparent;
+}
+
 header h1{
     color: rgb(241, 12, 12);
     font-family: 'Bebas Neue', sans-serif;
@@ -223,7 +232,7 @@ nav ul li a:hover {
  .dynamic-section {
     margin-top: 60px; /* Espaço para o header fixo */
     padding: 20px;
-    background-color: #1c1c1c;
+    background-color: transparent;
     border-bottom: 2px solid #ff0000;
 }
 
