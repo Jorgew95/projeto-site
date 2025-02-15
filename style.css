@@ -405,19 +405,6 @@ iframe {
 }
 
 /* Ajusta o tamanho do vídeo para telas menores */
-@media screen and (max-width: 768px) {
-    iframe {
-        width: 95%;
-        height: 300px; /* Reduz o tamanho do vídeo em celulares */
-    }
-}
-
-@media screen and (max-width: 480px) {
-    iframe {
-        width: 100%;
-        height: 250px; /* Torna o vídeo ainda menor para telas muito pequenas */
-    }
-}
 
 #closeVideo {
     position: absolute;
@@ -467,6 +454,20 @@ iframe {
     text-decoration: underline;
 }
 
+@media screen and (max-width: 768px) {
+    iframe {
+        width: 95%;
+        height: 300px; /* Reduz o tamanho do vídeo em celulares */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    iframe {
+        width: 100%;
+        height: 250px; /* Torna o vídeo ainda menor para telas muito pequenas */
+    }
+}
+
 
 
 /* configurações para telas menores */
@@ -491,6 +492,7 @@ iframe {
     .space img {
         width: 100px; /* Ajuste o tamanho conforme necessário */
         height: auto; /* Mantém a proporção original */
+        border: white 1px solid;
     }   
 
     .space{
