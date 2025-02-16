@@ -256,6 +256,7 @@ nav ul li a:hover {
 .dynamic-carousel-container {
     display: flex;
     gap: 10px;
+    width: max-content; /* Garante que o contêiner tenha largura suficiente */
     animation: scroll 30s linear infinite;
 }
 
@@ -265,7 +266,7 @@ nav ul li a:hover {
 
 .dynamic-carousel-item {
     flex: 0 0 auto;
-    width: 140px;
+    width: 140px; /* Largura fixa para cada item */
     border: white 1px solid;
     border-radius: 10px;
     overflow: hidden;
@@ -294,7 +295,7 @@ nav ul li a:hover {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% + 100vw)); /* Ajuste para deslocar com base na largura da tela */
     }
 }
 
@@ -361,7 +362,7 @@ footer p {
     }
     
     .dynamic-carousel-item {
-        width: 140px;
+        width: 120px; /* Ajuste a largura para telas menores */
         text-align: justify;
     }
 
@@ -370,8 +371,9 @@ footer p {
     }
 
     .dynamic-carousel {
+        gap: 5px; /* Reduza o espaçamento entre os itens */
         padding-bottom: 5px;
-        gap: 15px;
+        
     }
 
     .ajuste {
