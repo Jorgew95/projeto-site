@@ -227,7 +227,17 @@ nav ul li a:hover {
     color: #ffffff;
     text-align: center;
 }
-    
+
+.vertudo{
+    margin-left: 20px;
+    margin-right: 80px;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    background-color: transparent;
+    color: #ff0000;
+    width: 100px;
+
+}
 
  /* Nova Seção Dinâmica */
  .dynamic-section {
