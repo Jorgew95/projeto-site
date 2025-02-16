@@ -373,4 +373,9 @@ footer p {
         padding-bottom: 5px;
         gap: 15px;
     }
+
+    .ajuste {
+        margin-right: 0;
+        margin-left: 0;
+    }
 }
