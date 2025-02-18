@@ -30,8 +30,8 @@ header {
 .ajuste{
     
     justify-content: center;
-    margin-right: 300px;
-    margin-left: 300px;
+    margin-right: 250px;
+    margin-left: 250px;
     margin-top: 10px;
     background-color: transparent;
 }
@@ -204,7 +204,7 @@ nav ul li a:hover {
 
 .grid-item {
     flex: 0 0 auto;
-    width: 150px;
+    width: 180px;
     background-color: #333333;
     border-radius: 10px;
     overflow: hidden;
@@ -276,7 +276,7 @@ nav ul li a:hover {
 
 .dynamic-carousel-item {
     flex: 0 0 auto;
-    width: 140px; /* Largura fixa para cada item */
+    width: 200px; /* Largura fixa para cada item */
     border: white 1px solid;
     border-radius: 10px;
     overflow: hidden;
